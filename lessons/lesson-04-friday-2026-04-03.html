@@ -6,13 +6,26 @@
     <title>Mind Clarity & Rational Observation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --success: #27ae60;
+            --error: #e74c3c;
+            --bg: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+        nav { background: var(--primary); padding: 15px; text-align: center; margin-bottom: 30px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        
         .correct { border: 2px solid #22c55e; background-color: #f0fdf4; }
         .incorrect { border: 2px solid #ef4444; background-color: #fef2f2; }
         .explanation { display: none; margin-top: 10px; font-size: 0.9rem; color: #475569; padding: 10px; border-left: 4px solid #3b82f6; background: #f8fafc; }
         .option-hover:hover { background-color: #f1f5f9; cursor: pointer; }
+        
     </style>
 </head>
 <body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+    <nav><a href="../index.html">← Back to Learning Hub</a></nav>
 
     <div class="max-w-4xl mx-auto p-4 md:p-8">
         <header class="text-center mb-10">

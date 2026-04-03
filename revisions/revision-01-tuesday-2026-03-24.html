@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="../style-session.css">
     <style>
         :root { --success-bg: #dcfce7; --error-bg: #fee2e2; --indigo-dark: #1e293b; --accent-blue: #2563eb; }
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --success: #27ae60;
+            --error: #e74c3c;
+            --bg: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+        nav { background: var(--primary); padding: 15px; text-align: center; margin-bottom: 30px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        
         .question-card { background: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; border: 1px solid #e2e8f0; transition: 0.3s; }
         .explanation { display: none; margin-top: 15px; padding: 12px; border-radius: 8px; font-size: 0.95rem; background: #f8fafc; border-left: 4px solid var(--accent-blue); color: #475569; }
         .correct-ans { border: 2px solid #22c55e; background-color: var(--success-bg); }
@@ -17,7 +28,7 @@
     </style>
 </head>
 <body>
-    <nav><a href="../index.html">← Back to Hub</a></nav>
+    <nav><a href="../index.html">← Back to Learning Hub</a></nav>
     <div class="container">
         <h1>Phonetics & Learning Strategy</h1>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/FRfVzF8Tk0c?si=EJuy1hQLAuOCYDC7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
