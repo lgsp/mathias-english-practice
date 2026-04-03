@@ -3,33 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friday March 27th</title>
+    <title>Friday March 27th - Session 2 Quiz</title>
     <style>
-        :root { --primary: #0f172a; --accent: #3b82f6; --bg: #f1f5f9; --white: #ffffff; }
+        :root { --primary: #0f172a; --accent: #3b82f6; --success: #10b981; --error: #ef4444; --bg: #f1f5f9; --white: #ffffff; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: #334155; line-height: 1.5; padding: 20px; }
         .container { max-width: 1000px; margin: 0 auto; }
         .card { background: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 25px; }
         h1, h2, h3 { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 5px; }
         
-        /* Vocabulary Grid */
         .vocab-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .vocab-group { background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; }
         .vocab-item { margin-bottom: 10px; font-size: 0.95rem; }
         .word { font-weight: bold; color: var(--accent); }
         .syn { color: #64748b; font-style: italic; font-size: 0.85rem; }
 
-        /* Comparison Table */
         .scroll-table { overflow-x: auto; margin-top: 20px; }
         table { width: 100%; border-collapse: collapse; background: white; }
         th, td { border: 1px solid #e2e8f0; padding: 10px; text-align: left; font-size: 0.9rem; }
         th { background: #f1f5f9; position: sticky; top: 0; }
         tr:nth-child(even) { background: #f8fafc; }
 
-        /* Quiz */
         .quiz-container { background: #eff6ff; padding: 25px; border-radius: 12px; }
-        .question { font-weight: 600; margin-top: 20px; display: block; color: var(--primary); }
-        .btn { background: var(--accent); color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; margin-top: 30px; font-size: 1rem; }
-        .feedback { margin-top: 20px; padding: 15px; border-radius: 8px; display: none; text-align: center; font-weight: bold; }
+        .question-block { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; border-left: 4px solid var(--accent); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .question-title { font-weight: 600; color: var(--primary); margin-bottom: 12px; font-size: 1.05rem; }
+        .options { display: flex; flex-direction: column; gap: 8px; }
+        .option-label { padding: 10px; background: #f8fafc; border-radius: 6px; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; }
+        .option-label:hover { background: #e0f2fe; border-color: #bae6fd; }
+        .option-label input { margin-right: 8px; }
+        .option-label.correct { background: #d1fae5; border-color: var(--success); color: #065f46; }
+        .option-label.incorrect { background: #fee2e2; border-color: var(--error); color: #991b1b; }
+        .option-label.selected-wrong { background: #fee2e2; border-color: var(--error); }
+        
+        .explanation { display: none; margin-top: 10px; padding: 10px; background: #f0f9ff; border-left: 3px solid var(--accent); border-radius: 4px; font-size: 0.9rem; color: #1e40af; font-style: italic; }
+        .explanation.show { display: block; }
+        
+        .btn { background: var(--accent); color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; margin-top: 20px; font-size: 1.1rem; transition: background 0.3s; }
+        .btn:hover { background: #2563eb; }
+        .btn:disabled { background: #94a3b8; cursor: not-allowed; }
+        
+        .score-display { text-align: center; font-size: 1.5rem; font-weight: bold; color: var(--primary); margin: 20px 0; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); display: none; }
+        .score-display.show { display: block; }
+        .score-number { font-size: 2.5rem; color: var(--accent); }
+        
+        .results-summary { margin-top: 15px; font-size: 0.95rem; color: #64748b; }
     </style>
 </head>
 <body>
@@ -41,10 +57,10 @@
     </header>
 
     <section class="card">
-        <h2>1. Vocabulary & Semantics</h2>
+        <h2>1.  <a href="https://www.dictionary.com" target="_blank" rel="noopener noreferrer">Vocabulary</a> & <a href="https://youglish.com" target="_blank" rel="noopener noreferrer">Semantics</a></h2>
         <div class="vocab-section">
             <div class="vocab-group">
-                <h3>Actions (Verbes)</h3>
+                <h3>Actions (Verbs)</h3>
                 <div class="vocab-item"><span class="word">To waste:</span> to use inefficiently.</div>
                 <div class="vocab-item"><span class="word">To break down:</span> to decompose.</div>
                 <div class="vocab-item"><span class="word">To skim:</span> to read a text quickly.</div>
@@ -55,7 +71,7 @@
                 <div class="vocab-item"><span class="word">To read out loud:</span> to read with SOUND.</div>
             </div>
             <div class="vocab-group">
-                <h3>Concepts (Noms & Adverbes)</h3>
+                <h3>Concepts (Nouns & Adverbs)</h3>
                 <div class="vocab-item"><span class="word">Workload:</span> amount of work.</div>
                 <div class="vocab-item"><span class="word">Worth:</span> value.</div>
                 <div class="vocab-item"><span class="word">Straight:</span> direct.</div>
@@ -78,7 +94,7 @@
     </section>
 
     <section class="card">
-        <h2>2. The Complete Comparative Logic (52 Adjectives)</h2>
+        <h2>2. The Complete Comparative And Superlative Logic (52 Adjectives)</h2>
         <div class="scroll-table">
             <table id="adjTable">
                 <thead>
@@ -91,35 +107,19 @@
     </section>
 
     <section class="card quiz-container">
-        <h2>3. Knowledge Integration Test</h2>
-        <div id="quiz">
-            <span class="question">1. If you "skim" a text, you are:</span>
-            <label><input type="radio" name="q1" value="c"> Reading quickly for the main idea.</label><br>
-            <label><input type="radio" name="q1" value="w"> Reading every word out loud.</label>
-
-            <span class="question">2. Which sentence is grammatically correct?</span>
-            <label><input type="radio" name="q2" value="w"> My workload is more big than yours.</label><br>
-            <label><input type="radio" name="q2" value="c"> My workload is bigger than yours.</label>
-
-            <span class="question">3. "To allow" is a synonym of:</span>
-            <label><input type="radio" name="q3" value="c"> To permit.</label><br>
-            <label><input type="radio" name="q3" value="w"> To avoid.</label>
-
-            <span class="question">4. Efficient focuses on _____ while Effective focuses on _____.</span>
-            <label><input type="radio" name="q4" value="c"> Resources / Results.</label><br>
-            <label><input type="radio" name="q4" value="w"> Results / Resources.</label>
-
-            <span class="question">5. What is a "chunk" of information?</span>
-            <label><input type="radio" name="q5" value="c"> A large piece or section.</label><br>
-            <label><input type="radio" name="q5" value="w"> A very small detail.</label>
-
-            <span class="question">6. Superlative of "Knowledgeable":</span>
-            <label><input type="radio" name="q6" value="c"> The most knowledgeable.</label><br>
-            <label><input type="radio" name="q6" value="w"> The knowledgeablest.</label>
-
-            <button class="btn" onclick="validateQuiz()">Check My Progress</button>
-            <div id="res" class="feedback"></div>
+        <h2>3. Knowledge Integration Test (20 Questions)</h2>
+        <div id="scoreDisplay" class="score-display">
+            <div>Your Score</div>
+            <div class="score-number"><span id="scoreValue">0</span>/20</div>
+            <div id="scoreMessage" style="margin-top: 10px; font-size: 1.1rem;"></div>
+            <div class="results-summary">Correct answers are marked in green, incorrect in red.</div>
         </div>
+        
+        <div id="quizContent">
+            <!-- Questions will be inserted here by JavaScript -->
+        </div>
+        
+        <button class="btn" id="validateBtn" onclick="validateQuiz()">Check My Progress</button>
     </section>
 </div>
 
@@ -157,21 +157,334 @@
     adjectives.forEach(a => {
         body.innerHTML += `<tr><td>${a[0]}</td><td>${a[1]}</td><td>${a[2]}</td></tr>`;
     });
+const quizData = [
+    // PART 1: VOCABULARY (10 Questions)
+    {
+        q: "What does 'to skim' a text mean?",
+        options: [
+            "To read every word carefully and slowly",
+            "To read a text quickly for the main idea",
+            "To translate the text into your native language",
+            "To write a summary after reading"
+        ],
+        correct: 1,
+        exp: "To skim means to read quickly to get the general idea (aperçu rapide)."
+    },
+    {
+        q: "Which expression is a synonym of 'to allow'?",
+        options: [
+            "To avoid",
+            "To permit",
+            "To escape",
+            "To trick"
+        ],
+        correct: 1,
+        exp: "'To allow', 'to permit', and 'to authorise' all mean 'to let'."
+    },
+    {
+        q: "What is the meaning of 'workload'?",
+        options: [
+            "A place where you work",
+            "The amount of work to be done",
+            "The tools you use for work",
+            "The time you start working"
+        ],
+        correct: 1,
+        exp: "Workload refers to the quantity or amount of work assigned."
+    },
+    {
+        q: "If you 'break down' a complex problem, you:",
+        options: [
+            "Ignore it completely",
+            "Decompose it into smaller parts",
+            "Solve it immediately",
+            "Avoid dealing with it"
+        ],
+        correct: 1,
+        exp: "To break down means to decompose or divide into smaller components."
+    },
+    {
+        q: "What does 'alongside' mean?",
+        options: [
+            "Far away from",
+            "By the side / beside",
+            "In front of",
+            "Behind"
+        ],
+        correct: 1,
+        exp: "'Alongside' means by the side of something or beside it."
+    },
+    {
+        q: "What is a 'chunk' of information?",
+        options: [
+            "A very small detail",
+            "A large piece or section",
+            "A deleted part",
+            "A hidden message"
+        ],
+        correct: 1,
+        exp: "A chunk is a large piece or substantial portion of something."
+    },
+    {
+        q: "What does 'to glance (at)' mean?",
+        options: [
+            "To stare for a long time",
+            "To look quickly",
+            "To close your eyes",
+            "To read thoroughly"
+        ],
+        correct: 1,
+        exp: "To glance means to look at something quickly or briefly."
+    },
+    {
+        q: "What is 'synthesis' in the context of learning?",
+        options: [
+            "Separating ideas into categories",
+            "Merging entities into a single unified entity",
+            "Memorizing word lists",
+            "Skipping difficult content"
+        ],
+        correct: 1,
+        exp: "Synthesis means combining multiple elements into one coherent whole."
+    },
+    {
+        q: "What does 'to read out loud' mean?",
+        options: [
+            "To read silently in your mind",
+            "To read with sound/audibly",
+            "To read very fast",
+            "To read only the conclusion"
+        ],
+        correct: 1,
+        exp: "'Out loud' means audibly with voice, not silently."
+    },
+    {
+        q: "What is an 'anchor' in a learning context?",
+        options: [
+            "A heavy metal object for boats only",
+            "A method to fix attention or restrict motion",
+            "A type of highlighter",
+            "A summary of a text"
+        ],
+        correct: 1,
+        exp: "An anchor fixes attention or restricts motion (keeps something stable)."
+    },
 
-    function validateQuiz() {
-        const correctAnswers = { q1: 'c', q2: 'c', q3: 'c', q4: 'c', q5: 'c', q6: 'c' };
-        let score = 0;
-        let total = 6;
-        for (let q in correctAnswers) {
-            const sel = document.querySelector(`input[name="${q}"]:checked`);
-            if (sel && sel.value === correctAnswers[q]) score++;
-        }
-        const res = document.getElementById('res');
-        res.style.display = 'block';
-        res.style.background = score === total ? "#dcfce7" : "#fee2e2";
-        res.style.color = score === total ? "#166534" : "#991b1b";
-        res.innerHTML = `Final Score: ${score}/${total}. ` + (score === total ? "Mastery Achieved!" : "Check the definitions and the table above.");
+    // PART 2: COMPARATIVE & SUPERLATIVE LOGIC (10 Questions)
+    {
+        q: "What is the correct comparative form of 'big'?",
+        options: [
+            "More big",
+            "Bigger",
+            "Biggest",
+            "Most big"
+        ],
+        correct: 1,
+        exp: "Short adjectives (CVC pattern) double the final consonant: big → bigger."
+    },
+    {
+        q: "Complete: 'This method is _____ effective than the old one.'",
+        options: [
+            "effectiver",
+            "more effective",
+            "most effective",
+            "the more effective"
+        ],
+        correct: 1,
+        exp: "Long adjectives (3+ syllables) use 'more' for the comparative form."
+    },
+    {
+        q: "What is the superlative form of 'good'?",
+        options: [
+            "The goodest",
+            "The best",
+            "The better",
+            "Most good"
+        ],
+        correct: 1,
+        exp: "'Good' is irregular: good → better → the best."
+    },
+    {
+        q: "Which sentence uses the comparative correctly for 'happy'?",
+        options: [
+            "She is more happy than her sister",
+            "She is happyer than her sister",
+            "She is happier than her sister",
+            "She is most happy than her sister"
+        ],
+        correct: 2,
+        exp: "Adjectives ending in 'y' change to 'i' + er: happy → happier."
+    },
+    {
+        q: "What is the correct form for 'bad' (comparative)?",
+        options: [
+            "Badder",
+            "More bad",
+            "Worse",
+            "Worst"
+        ],
+        correct: 2,
+        exp: "'Bad' is irregular: bad → worse → the worst."
+    },
+    {
+        q: "Complete the superlative: 'He is the _____ (knowledgeable) student in the class.'",
+        options: [
+            "knowledgeablest",
+            "most knowledgeable",
+            "more knowledgeable",
+            "knowledgeabler"
+        ],
+        correct: 1,
+        exp: "Long adjectives use 'the most' for superlatives (not -est)."
+    },
+    {
+        q: "Which rule applies to short adjectives (1 syllable)?",
+        options: [
+            "Use 'more' before the adjective",
+            "Add '-er' for comparative, '-est' for superlative",
+            "Add 'the most' before the adjective",
+            "Change the last letter to 'i'"
+        ],
+        correct: 1,
+        exp: "Short adjectives (1 syllable) take -er (comparative) and -est (superlative)."
+    },
+    {
+        q: "What is the superlative of 'volatile'?",
+        options: [
+            "Volatilist",
+            "The most volatile",
+            "More volatile",
+            "The volatilest"
+        ],
+        correct: 1,
+        exp: "Long adjectives (3+ syllables) use 'the most' for superlatives."
+    },
+    {
+        q: "Choose the correct sentence:",
+        options: [
+            "My workload is more big than yours",
+            "My workload is bigger than yours",
+            "My workload is the biggest than yours",
+            "My workload is biger than yours"
+        ],
+        correct: 1,
+        exp: "'Big' is a short adjective (CVC), so we add -er (doubling the 'g'): bigger."
+    },
+    {
+        q: "What is the comparative of 'easy'?",
+        options: [
+            "More easy",
+            "Easyer",
+            "Easier",
+            "Most easy"
+        ],
+        correct: 2,
+        exp: "'Easy' ends in 'y', so we change 'y' to 'i' and add -er: easier."
     }
+];
+
+function initQuiz() {
+    const container = document.getElementById('quizContent');
+    quizData.forEach((item, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question-block';
+        questionDiv.id = `question-${index}`;
+        
+        let optionsHtml = '<div class="options">';
+        item.options.forEach((opt, i) => {
+            optionsHtml += `
+                <label class="option-label" id="label-${index}-${i}">
+                    <input type="radio" name="q${index}" value="${i}" onchange="clearSelection(${index})">
+                    ${opt}
+                </label>
+            `;
+        });
+        optionsHtml += '</div>';
+        
+        questionDiv.innerHTML = `
+            <div class="question-title">${index + 1}. ${item.q}</div>
+            ${optionsHtml}
+            <div class="explanation" id="exp-${index}">${item.exp}</div>
+        `;
+        
+        container.appendChild(questionDiv);
+    });
+}
+
+function clearSelection(qIndex) {
+    // Remove previous visual feedback when changing answer
+    const labels = document.querySelectorAll(`[id^="label-${qIndex}-"]`);
+    labels.forEach(label => {
+        label.classList.remove('correct', 'incorrect', 'selected-wrong');
+    });
+}
+
+function validateQuiz() {
+    let score = 0;
+    let answered = 0;
+    
+    quizData.forEach((item, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        const explanation = document.getElementById(`exp-${index}`);
+        
+        // Reset all labels for this question
+        item.options.forEach((_, i) => {
+            const label = document.getElementById(`label-${index}-${i}`);
+            label.classList.remove('correct', 'incorrect', 'selected-wrong');
+            
+            if (i === item.correct) {
+                label.classList.add('correct'); // Always show correct answer in green
+            }
+        });
+        
+        if (selected) {
+            answered++;
+            const selectedValue = parseInt(selected.value);
+            const selectedLabel = document.getElementById(`label-${index}-${selectedValue}`);
+            
+            if (selectedValue === item.correct) {
+                score++;
+            } else {
+                selectedLabel.classList.add('selected-wrong'); // Show wrong selection in red
+            }
+        }
+        
+        explanation.classList.add('show');
+    });
+    
+    // Display score
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const scoreValue = document.getElementById('scoreValue');
+    const scoreMessage = document.getElementById('scoreMessage');
+    
+    scoreValue.textContent = score;
+    scoreDisplay.classList.add('show');
+    
+    if (score === 20) {
+        scoreMessage.textContent = "🎉 Perfect! Mastery achieved!";
+        scoreMessage.style.color = "var(--success)";
+    } else if (score >= 15) {
+        scoreMessage.textContent = "👍 Great job! Keep practicing the few mistakes.";
+        scoreMessage.style.color = "var(--accent)";
+    } else if (score >= 10) {
+        scoreMessage.textContent = "📚 Good effort! Review the explanations above.";
+        scoreMessage.style.color = "#d97706";
+    } else {
+        scoreMessage.textContent = "💪 Keep studying! Check the vocabulary and grammar sections.";
+        scoreMessage.style.color = "var(--error)";
+    }
+    
+    // Disable button after validation
+    const btn = document.getElementById('validateBtn');
+    btn.disabled = true;
+    btn.textContent = "Quiz Completed";
+    
+    // Scroll to score
+    scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Initialize quiz on load
+window.onload = initQuiz;
 </script>
 
 </body>

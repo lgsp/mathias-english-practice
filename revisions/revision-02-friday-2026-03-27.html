@@ -3,377 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Sowell: The 20 Quotes Logic Challenge</title>
+    <title>Revision - Comprehensible Input</title>
     <link rel="stylesheet" href="../style-session.css">
     <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #3498db;
-            --success: #27ae60;
-            --error: #e74c3c;
-            --bg: #f4f7f6;
-            --card-bg: #ffffff;
-        }
-
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: #333; line-height: 1.6; padding-bottom: 50px; }
-        nav { background: var(--primary); padding: 15px; text-align: center; margin-bottom: 30px; }
-        nav a { color: white; text-decoration: none; font-weight: bold; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-        
-        .header-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; margin-bottom: 30px; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin: 20px 0; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-        .category-title { 
-            background: var(--primary); color: white; padding: 15px; 
-            border-radius: 8px; margin: 40px 0 20px 0; font-size: 1.2rem; font-weight: bold;
-        }
-
-        .question-card { background: var(--card-bg); padding: 25px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #ddd; transition: 0.3s; }
-        .question-text { font-weight: bold; font-size: 1.05rem; margin-bottom: 15px; color: #2c3e50; }
-        
-        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        @media (max-width: 600px) { .options-grid { grid-template-columns: 1fr; } }
-        
-        .option { 
-            padding: 12px; border: 2px solid #eee; border-radius: 8px; 
-            cursor: pointer; display: flex; align-items: center; font-size: 0.95rem; transition: 0.2s;
-        }
-        .option:hover { background: #f8f9fa; border-color: var(--accent); }
-        .option input { margin-right: 12px; cursor: pointer; }
-
-        /* Classes de correction */
-        .explanation { 
-            display: none; margin-top: 20px; padding: 15px; 
-            background: #f0f7ff; border-left: 5px solid var(--accent); font-size: 0.9rem; border-radius: 4px;
-        }
-        .correct { background: #d4edda !important; border-color: var(--success) !important; color: #155724; font-weight: bold; }
-        .wrong { background: #f8d7da !important; border-color: var(--error) !important; color: #721c24; }
-
-        #floating-results { 
-            display: none; position: sticky; top: 20px; z-index: 1000; 
-            background: var(--primary); color: white; padding: 15px; 
-            border-radius: 8px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-        }
-        .submit-btn { 
-            display: block; width: 100%; max-width: 300px; margin: 40px auto; 
-            padding: 15px; background: var(--accent); color: white; 
-            border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer;
-        }
-        .submit-btn:hover { filter: brightness(1.1); }
+        :root { --accent: #2563eb; --bg: #f8fafc; --white: #ffffff; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #1e293b; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 30px; border-radius: 12px; overflow: hidden; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 40px; }
+        .vocab-item { border-left: 4px solid var(--accent); padding: 10px 15px; background: #f1f5f9; border-radius: 0 8px 8px 0; }
+        .vocab-item b { color: var(--accent); display: block; margin-bottom: 5px; }
+        .quiz-card { background: #fff; border: 1px solid #e2e8f0; padding: 20px; border-radius: 10px; margin-bottom: 20px; transition: 0.3s; }
+        .option-label { display: block; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; margin: 8px 0; cursor: pointer; transition: 0.2s; }
+        .option-label:hover { background: #f1f5f9; }
+        .explanation { display: none; margin-top: 10px; font-size: 0.9rem; padding: 10px; border-radius: 6px; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+        .correct { border-color: #22c55e; background: #f0fdf4; }
+        .incorrect { border-color: #ef4444; background: #fef2f2; }
+        #submit-btn { background: var(--accent); color: white; border: none; padding: 15px 40px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1rem; }
     </style>
 </head>
 <body>
+    <nav><a href="../index.html">← Back to Hub</a></nav>
+    <main class="container">
+        <header style="text-align:center; margin-bottom:30px;">
+            <h1>Learning through Input</h1>
+            <p>Analyze the method, master the vocabulary, and test your logic.</p>
+        </header>
 
-<nav><a href="../index.html">← Back to Learning Hub</a></nav>
-
-<div class="container">
-    <div class="header-card">
-        <h1><a href="https://en.wikipedia.org/wiki/Thomas_Sowell" target="_blank" rel="noopener noreferrer">Thomas Sowell</a>: 20 Quotes Mastery</h1>
-        <p>Analyze the logic, master the vocabulary, and sharpen your phonetics.</p>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/lhD26-wvFJY?si=ZCUy43AD_UDAjcIL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <div id="floating-results">
-        <h2 id="score-display">Your Score: 0 / 20</h2>
-        <p>Check the detailed explanations below.</p>
-    </div>
-
-    <form id="quiz-form">
-        <div class="category-title">I. PRONUNCIATION & PHONETICS</div>
-
-        <div class="question-card">
-            <p class="question-text">1. In the quote "Socialism in general has a record of failure so blatant that only an intellectual could ignore or evade it." How do you prononce the 'a' in "evade"?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q1" value="a"> Like in "bat"</label>
-                <label class="option"><input type="radio" name="q1" value="e"> Like in "about"</label>
-                <label class="option"><input type="radio" name="q1" value="o"> Like in "wall"</label>
-                <label class="option" data-correct="true"><input type="radio" name="q1" value="w"> Like in "blade"</label>
-            </div>
-            <div class="explanation">
-                <b>Correction:</b>
-                <a href="https://youglish.com/pronounce/blade/english" target="_blank" rel="noopener noreferrer">blade</a> = 
-                <a href="https://www.wordreference.com/enfr/blade" target="_blank" rel="noopener noreferrer">/ˈbleɪd/</a> and 
-                <a href="https://youglish.com/pronounce/evade/english" target="_blank" rel="noopener noreferrer">evade</a> = 
-                <a href="https://www.wordreference.com/enfr/evade" target="_blank" rel="noopener noreferrer">/ɪˈveɪd/</a> 
-                in both cases 'a' = /eɪ/.
-            </div>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/bo47JoSxl1s" frameborder="0" allowfullscreen></iframe>
         </div>
 
-        <div class="question-card">
-            <p class="question-text">2. What word has the same pronunciation for the pattern "ow" as in "power"?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q2" value="k">know</label>
-                <label class="option" data-correct="true"><input type="radio" name="q2" value="h">however</label>
-                <label class="option"><input type="radio" name="q2" value="l">lower</label>
-                <label class="option"><input type="radio" name="q2" value="n">narrow</label>
+        <section>
+            <h2>I. Essential Vocabulary</h2>
+            <div class="vocab-grid">
+                <div class="vocab-item"><b>Acquisition</b> The process of developing a skill or habit.</div>
+                <div class="vocab-item"><b>Fluency</b> The ability to speak or write a language easily and accurately.</div>
+                <div class="vocab-item"><b>Comprehensible</b> Able to be understood; intelligible.</div>
+                <div class="vocab-item"><b>Shadowing</b> A technique where you repeat what a speaker says as they say it.</div>
+                <div class="vocab-item"><b>Solidify</b> To make a concept or memory stronger and more certain.</div>
+                <div class="vocab-item"><b>Reinforce</b> To strengthen an existing idea or habit.</div>
+                <div class="vocab-item"><b>Customizable</b> Able to be modified to suit a specific person's needs.</div>
+                <div class="vocab-item"><b>Vlog</b> A personal video blog recording a person's life or thoughts.</div>
+                <div class="vocab-item"><b>Acquire</b> To buy or obtain an object or asset.</div>
+                <div class="vocab-item"><b>Tense</b> A grammatical category which marks the time of an action (past, present, etc.).</div>
             </div>
-            <div class="explanation">
-                <b>Correction:</b>
-                <a href="https://youglish.com/pronounce/power/english" target="_blank" rel="noopener noreferrer">power</a> = 
-                <a href="https://www.wordreference.com/enfr/power" target="_blank" rel="noopener noreferrer">/ˈpaʊər/</a> 
-                and 
-                <a href="https://youglish.com/pronounce/however/english" target="_blank" rel="noopener noreferrer">however</a> 
-                =
-                <a href="https://www.wordreference.com/enfr/however" target="_blank" rel="noopener noreferrer">/haʊˈɛvər/</a> 
-                in both cases the pattern "ow" = /aʊ/.</div>
-        </div>
+        </section>
 
-        <div class="question-card">
-            <p class="question-text">3. In "signs", how is the 'ign' pronounced?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q3" value="g"> Like in "signal"</label>
-                <label class="option"><input type="radio" name="q3" value="gg"> Like in "ignore"</label>
-                <label class="option"><input type="radio" name="q3" value="ggg"> Like "signature"</label>
-                <label class="option" data-correct="true"><input type="radio" name="q3" value="n"> Like in "assign"</label>
-            </div>
-            <div class="explanation">
-                <b>Correction:</b> 
-                <a href="https://youglish.com/pronounce/sign/english" target="_blank" rel="noopener noreferrer">sign</a> =
-                <a href="https://www.wordreference.com/enfr/sign" target="_blank" rel="noopener noreferrer">/ˈsaɪn/</a>
-                <a href="https://youglish.com/pronounce/assign/english" target="_blank" rel="noopener noreferrer">assign</a> =
-                <a href="https://www.wordreference.com/enfr/assign" target="_blank" rel="noopener noreferrer">/əˈsaɪn/</a>
-            </div>
-        </div>
+        <section>
+            <h2>II. Knowledge Validation Quiz</h2>
+            <form id="quizForm">
+                <div id="questions-container"></div>
+                <div style="text-align:center; margin-top:30px;">
+                    <button type="button" id="submit-btn" onclick="checkQuiz()">Validate My Results</button>
+                </div>
+            </form>
+            <div id="result-box" style="display:none; text-align:center; margin-top:20px; font-size:1.5rem; font-weight:bold;"></div>
+        </section>
+    </main>
 
-        <div class="question-card">
-            <p class="question-text">4. Which word has a different vowel sound than "Greed"?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q4" value="w"> Need</label>
-                <label class="option"><input type="radio" name="q4" value="w"> People</label>
-                <label class="option" data-correct="true"><input type="radio" name="q4" value="c"> Dead</label>
-                <label class="option"><input type="radio" name="q4" value="w"> Achievement</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> "Greed", "Need", "People", and "Achievement" all use the long /iː/. "Dead" uses the short /e/.</div>
-        </div>
+    <script>
+        const quizData = [
+            /* Pronunciation */
+            { q: "Which syllable is stressed in 'Acquisition'?", options: ["Ac-", "-qui-", "-si-", "-tion"], correct: 2, exp: "The stress is on the third syllable: /ˌæk-wɪ-ˈzɪʃ-ən/." },
+            { q: "How is the 'ch' pronounced in 'Architecture'?", options: ["Like 'church'", "Like 'k'", "Like 'sh'", "It's silent"], correct: 1, exp: "In words of Greek origin, 'ch' is often pronounced as /k/." },
+            { q: "Which letter is silent in 'Receipt'?", options: ["R", "e", "p", "t"], correct: 2, exp: "The 'p' is silent. Pronunciation: /rɪˈsiːt/." },
+            { q: "The word 'Knowledge' starts with which sound?", options: ["/k/", "/n/", "/g/", "/w/"], correct: 1, exp: "The initial 'k' is silent before an 'n'. Pronunciation: /ˈnɒl.ɪdʒ/." },
+            { q: "Which word has the same 'gh' sound as 'Rough'?", options: ["Ghost", "Through", "Enough", "Though"], correct: 2, exp: "In 'Rough' and 'Enough', the 'gh' sounds like /f/." },
+            /* Vocabulary */
+            { q: "What is an SRS software?", options: ["A social media app", "Spaced Repetition System", "A video editing tool", "A dictionary"], correct: 1, exp: "SRS uses algorithms to show you words right before you forget them." },
+            { q: "If a text is 'intelligible', it is:", options: ["Very difficult", "Understandable", "Written in code", "Boring"], correct: 1, exp: "Intelligible is a synonym for comprehensible or understandable." },
+            { q: "What does 'Acquire' mean in the video's context?", options: ["To study rules", "To buy a book", "To pick up a language naturally", "To sell a course"], correct: 2, exp: "Acquiring happens subconsciously through exposure, unlike conscious learning." },
+            { q: "What is the synonym of 'Grasp' in the context of an idea?", options: ["Hold", "Understand", "Forget", "Throw"], correct: 1, exp: "To grasp an idea means to fully understand it." },
+            { q: "A 'Vlog' is usually designed to be:", options: ["Boring", "Personal and visual", "Academic and formal", "Silent"], correct: 1, exp: "Vlogs use real-life context and visuals to provide comprehensible input." },
+            /* Grammar */
+            { q: "Complete: 'This grass ___ taller because it hasn't been cut.'", options: ["is", "are", "were", "been"], correct: 0, exp: "Grass is an uncountable noun, so we use the singular verb 'is'." },
+            { q: "What part of speech is 'customizable'?", options: ["Verb", "Adjective", "Noun", "Adverb"], correct: 1, exp: "It describes a noun, so it is an adjective." },
+            { q: "Identify the tense: 'I am opening the door.'", options: ["Simple Present", "Present Continuous", "Simple Past", "Future"], correct: 1, exp: "The structure 'am + verb-ing' indicates an action happening now." },
+            { q: "Which is correct?", options: ["She speak English.", "She speaks English.", "She speaking English.", "She do speak English."], correct: 1, exp: "In the 3rd person singular present, we must add an 's' to the verb." },
+            { q: "Complete: 'If you watch vlogs, you ___ learn naturally.'", options: ["would", "will", "did", "have"], correct: 1, exp: "This is a first conditional sentence expressing a real possibility." },
+            /* Comprehension */
+            { q: "According to the video, how many words cover 95% of spoken English?", options: ["1,000", "3,000", "10,000", "50,000"], correct: 1, exp: "The video states that 3,000 words are enough to understand almost all spoken English." },
+            { q: "Why is Comprehensible Input better than a classroom?", options: ["It is more expensive", "It is boring", "It allows you to think in English", "It requires no effort"], correct: 2, exp: "Real context helps your brain skip translation and start thinking directly in the target language." },
+            { q: "What is the second step of the method?", options: ["Watching videos", "Using Anki", "Reinforcement (definitions/quizzes)", "Traveling"], correct: 2, exp: "The second step is using tools to solidify what you just saw in the video." },
+            { q: "How much more effective is this method compared to traditional ones?", options: ["2 times", "4 times", "10 times", "The video doesn't say"], correct: 1, exp: "The speaker claims it is 4 times more effective than classroom instruction." },
+            { q: "Shadowing involves:", options: ["Drawing a picture", "Repeating after the speaker", "Sitting in the dark", "Reading quietly"], correct: 1, exp: "Shadowing is an active technique where you mimic the speaker's rhythm and sounds." }
+        ];
 
-        <div class="question-card">
-            <p class="question-text">5. Where is the stress in the word "Superiority"?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q5" value="w"> SU-periority</label>
-                <label class="option" data-correct="true"><input type="radio" name="q5" value="c"> superi-OR-ity</label>
-                <label class="option"><input type="radio" name="q5" value="w"> superior-I-ty</label>
-                <label class="option"><input type="radio" name="q5" value="w"> su-PE-riority</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> Words ending in '-ity' almost always have the primary stress on the syllable immediately preceding the suffix.</div>
-        </div>
+        function initQuiz() {
+            const container = document.getElementById('questions-container');
+            quizData.forEach((item, index) => {
+                let optionsHtml = item.options.map((opt, i) => `
+                    <label class="option-label">
+                        <input type="radio" name="q${index}" value="${i}"> ${opt}
+                    </label>
+                `).join('');
+                
+                container.innerHTML += `
+                    <div class="quiz-card" id="card-${index}">
+                        <p style="font-weight:bold;">${index + 1}. ${item.q}</p>
+                        ${optionsHtml}
+                        <div class="explanation" id="exp-${index}"><b>Correct:</b> ${item.exp}</div>
+                    </div>
+                `;
+            });
+        }
 
-        <div class="category-title">II. VOCABULARY & SEMANTICS</div>
+        function checkQuiz() {
+            let score = 0;
+            quizData.forEach((item, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                const card = document.getElementById(`card-${index}`);
+                const exp = document.getElementById(`exp-${index}`);
+                exp.style.display = 'block';
 
-        <div class="question-card">
-            <p class="question-text">6. "There are no solutions, only trade-offs." What is a "Trade-off"?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q6" value="w"> A business partnership</label>
-                <label class="option" data-correct="true"><input type="radio" name="q6" value="c"> A balance achieved between two incompatible features</label>
-                <label class="option"><input type="radio" name="q6" value="w"> A type of financial fraud</label>
-                <label class="option"><input type="radio" name="q6" value="w"> A complete victory</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> A trade-off (un compromis) means you must give up something to get something else; there is no "perfect" cost-free solution.</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">7. What does "Scarcity" mean in an economic context?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q7" value="w"> A state of extreme wealth</label>
-                <label class="option" data-correct="true"><input type="radio" name="q7" value="c"> Limited availability of resources</label>
-                <label class="option"><input type="radio" name="q7" value="w"> The study of historical prices</label>
-                <label class="option"><input type="radio" name="q7" value="w"> Government intervention</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> Scarcity (la rareté) is the fundamental economic problem of having seemingly unlimited human wants in a world of limited resources.</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">8. A "Race Hustler" is someone who:</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q8" value="w"> Works hard to end racism</label>
-                <label class="option" data-correct="true"><input type="radio" name="q8" value="c"> Profits by provoking racial tension</label>
-                <label class="option"><input type="radio" name="q8" value="w"> Competes in athletic races</label>
-                <label class="option"><input type="radio" name="q8" value="w"> Is a victim of discrimination</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> "Hustler" implies a manipulator or someone running a scam. A race hustler uses racial issues for personal or political gain.</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">9. "It is usually futile to talk facts..." What is the synonym of "Futile"?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q9" value="w"> Essential</label>
-                <label class="option"><input type="radio" name="q9" value="w"> Productive</label>
-                <label class="option" data-correct="true"><input type="radio" name="q9" value="c"> Pointless</label>
-                <label class="option"><input type="radio" name="q9" value="w"> Dangerous</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> "Futile" means incapable of producing any useful result; vain or useless.</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">10. To "Disregard" a lesson means:</p>
-            <div class="options-grid">
-                <label class="option" data-correct="true"><input type="radio" name="q10" value="c"> To ignore or pay no attention to it</label>
-                <label class="option"><input type="radio" name="q10" value="w"> To study it carefully</label>
-                <label class="option"><input type="radio" name="q10" value="w"> To improve upon it</label>
-                <label class="option"><input type="radio" name="q10" value="w"> To share it with others</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> Disregard (ignorer/mépriser) means to treat something as unworthy of consideration.</div>
-        </div>
-
-        <div class="category-title">III. LOGICAL COMPREHENSION</div>
-
-        <div class="question-card">
-            <p class="question-text">11. Why is putting decisions in the hands of people who "pay no price for being wrong" dangerous?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q11" value="w"> Because they are not smart enough</label>
-                <label class="option" data-correct="true"><input type="radio" name="q11" value="c"> Because they have no incentive to be right</label>
-                <label class="option"><input type="radio" name="q11" value="w"> Because it costs too much money</label>
-                <label class="option"><input type="radio" name="q11" value="w"> Because they are too fast at deciding</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> Without consequences (accountability), decision-makers ignore the reality of their failures, leading to repeated "stupid" policies.</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">12. Sowell defines "Social Engineering" as replacing what works with:</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q12" value="w"> What is mathematically proven</label>
-                <label class="option"><input type="radio" name="q12" value="w"> What the majority wants</label>
-                <label class="option" data-correct="true"><input type="radio" name="q12" value="c"> What sounds good</label>
-                <label class="option"><input type="radio" name="q12" value="w"> What is expensive</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> Sowell criticizes theorists who abandon functional systems for utopian ideas that "sound good" but fail in practice.</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">13. What is the psychological effect of "Preferential Treatment"?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q13" value="w"> People become more efficient</label>
-                <label class="option" data-correct="true"><input type="radio" name="q13" value="c"> Equal treatment starts to feel like discrimination</label>
-                <label class="option"><input type="radio" name="q13" value="w"> Racism disappears completely</label>
-                <label class="option"><input type="radio" name="q13" value="w"> Everyone feels satisfied</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> When a group is used to privileges, losing them for equality feels like a personal attack.</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">14. What is Sowell's point about "Greed"?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q14" value="w"> It is the main cause of poverty</label>
-                <label class="option"><input type="radio" name="q14" value="w"> Only rich people are greedy</label>
-                <label class="option" data-correct="true"><input type="radio" name="q14" value="c"> Wanting to take others' money is just as greedy as keeping yours</label>
-                <label class="option"><input type="radio" name="q14" value="w"> Greed is necessary for a good economy</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> He points out the logical hypocrisy of labeling those who earn money as "greedy" while exempting those who wish to seize it.</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">15. To defend civilization, Sowell says one must be prepared to:</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q15" value="w"> Use more articulate talkers</label>
-                <label class="option" data-correct="true"><input type="radio" name="q15" value="c"> Use force</label>
-                <label class="option"><input type="radio" name="q15" value="w"> Hold more meetings</label>
-                <label class="option"><input type="radio" name="q15" value="w"> Accept barbarism</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> If you aren't willing to fight for civilization, you implicitly accept its destruction by those who use force.</div>
-        </div>
-
-        <div class="category-title">IV. GRAMMAR & STRUCTURE</div>
-
-        <div class="question-card">
-            <p class="question-text">16. "Racism is kept alive by politicians." What is the grammatical subject?</p>
-            <div class="options-grid">
-                <label class="option" data-correct="true"><input type="radio" name="q16" value="c"> Racism (The receiver of the action)</label>
-                <label class="option"><input type="radio" name="q16" value="w"> Politicians (The doers)</label>
-                <label class="option"><input type="radio" name="q16" value="w"> Alive (The adjective)</label>
-                <label class="option"><input type="radio" name="q16" value="w"> It is an impersonal sentence</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> In a passive sentence, the subject is the person or thing that is acted upon.</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">17. "The greatest weapon of mass destruction is stupidity." Identify "Greatest":</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q17" value="w"> Comparative Adjective</label>
-                <label class="option" data-correct="true"><input type="radio" name="q17" value="c"> Superlative Adjective</label>
-                <label class="option"><input type="radio" name="q17" value="w"> Proper Noun</label>
-                <label class="option"><input type="radio" name="q17" value="w"> Adverb of Manner</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> '-est' signifies the superlative degree (the most of something).</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">18. "More stupid or more dangerous." Why do we use "More" here?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q18" value="w"> Because the adjectives are short</label>
-                <label class="option" data-correct="true"><input type="radio" name="q18" value="c"> Because "dangerous" is a long adjective</label>
-                <label class="option"><input type="radio" name="q18" value="w"> Because it is a superlative</label>
-                <label class="option"><input type="radio" name="q18" value="w"> Because Sowell is speaking formally</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> Adjectives with 3 or more syllables (dan-ger-ous) must use "more" for comparatives. Sowell applies it to "stupid" for stylistic parallelism.</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">19. In "Talkers" and "Doers", what does the suffix '-er' indicate?</p>
-            <div class="options-grid">
-                <label class="option"><input type="radio" name="q19" value="w"> The comparative degree</label>
-                <label class="option" data-correct="true"><input type="radio" name="q19" value="c"> The agent (person performing the action)</label>
-                <label class="option"><input type="radio" name="q19" value="w"> A plural marker</label>
-                <label class="option"><input type="radio" name="q19" value="w"> A past tense verb</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> Adding '-er' to a verb creates a noun meaning "someone who does [verb]".</div>
-        </div>
-
-        <div class="question-card">
-            <p class="question-text">20. "If you are not prepared to use force..." This is a:</p>
-            <div class="options-grid">
-                <label class="option" data-correct="true"><input type="radio" name="q20" value="c"> First Conditional (Real possibility)</label>
-                <label class="option"><input type="radio" name="q20" value="w"> Second Conditional (Imaginary)</label>
-                <label class="option"><input type="radio" name="q20" value="w"> Past Perfect tense</label>
-                <label class="option"><input type="radio" name="q20" value="w"> Passive Imperative</label>
-            </div>
-            <div class="explanation"><b>Correction:</b> "If + Present Simple, then Imperative/Future" is the structure of a real condition and its consequence.</div>
-        </div>
-
-        <button type="button" class="submit-btn" onclick="evaluateQuiz()">Check My Answers</button>
-    </form>
-</div>
-
-<script>
-    function evaluateQuiz() {
-        const form = document.getElementById('quiz-form');
-        const cards = document.querySelectorAll('.question-card');
-        let score = 0;
-
-        cards.forEach((card, index) => {
-            const correctLabel = card.querySelector('label[data-correct="true"]');
-            const selectedInput = card.querySelector('input[type="radio"]:checked');
-            const explanation = card.querySelector('.explanation');
-
-            // Afficher l'explication
-            explanation.style.display = 'block';
-
-            // Marquer la bonne réponse en vert
-            correctLabel.classList.add('correct');
-
-            // Vérifier le choix de l'utilisateur
-            if (selectedInput) {
-                const selectedLabel = selectedInput.parentElement;
-                if (selectedLabel.dataset.correct === "true") {
+                if (selected && parseInt(selected.value) === item.correct) {
                     score++;
+                    card.classList.add('correct');
+                    card.classList.remove('incorrect');
                 } else {
-                    selectedLabel.classList.add('wrong');
+                    card.classList.add('incorrect');
+                    card.classList.remove('correct');
                 }
-            }
-        });
+            });
 
-        // Afficher le score flottant
-        const resultsBanner = document.getElementById('floating-results');
-        const scoreDisplay = document.getElementById('score-display');
-        resultsBanner.style.display = 'block';
-        scoreDisplay.innerText = "Final Score: " + score + " / 20";
+            const resultBox = document.getElementById('result-box');
+            resultBox.innerText = `Your Final Score: ${score} / ${quizData.length}`;
+            resultBox.style.display = 'block';
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
 
-        // Remonter en haut de page pour voir le score
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-</script>
-
+        window.onload = initQuiz;
+    </script>
 </body>
 </html>

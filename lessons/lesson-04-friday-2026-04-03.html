@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Your Brain - Interactive Quiz</title>
+    <title>Mind Clarity & Rational Observation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .correct { border: 2px solid #22c55e; background-color: #f0fdf4; }
         .incorrect { border: 2px solid #ef4444; background-color: #fef2f2; }
         .explanation { display: none; margin-top: 10px; font-size: 0.9rem; color: #475569; padding: 10px; border-left: 4px solid #3b82f6; background: #f8fafc; }
+        .option-hover:hover { background-color: #f1f5f9; cursor: pointer; }
     </style>
 </head>
 <body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
@@ -16,269 +17,102 @@
     <div class="max-w-4xl mx-auto p-4 md:p-8">
         <header class="text-center mb-10">
             <h1 class="text-4xl font-extrabold text-indigo-900">How to Outsmart Your Own Brain</h1>
-            <p class="text-gray-600 mt-2">Maîtrisez l'anglais à travers les neurosciences.</p>
+            <p class="text-gray-600 mt-2">Mastering English through Neuroscience and Mind Clarity.</p>
         </header>
 
         <section class="bg-white p-6 rounded-2xl shadow-lg mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-indigo-700">1. Regardez la vidéo</h2>
-            <div class="aspect-video">
+            <h2 class="text-2xl font-bold text-indigo-800 mb-4 border-b-2 border-indigo-100 pb-2">1. The Rational Observer</h2>
+            <div class="aspect-video rounded-xl overflow-hidden mb-4 bg-black">
                 <iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/eyXVKnaWh7A" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="p-4 bg-indigo-50 rounded-xl border-l-4 border-indigo-500">
+                <p class="text-indigo-900 font-medium italic">
+                    "An observer understands how their own system is being targeted."
+                </p>
+                <p class="mt-2 text-sm text-gray-600">
+                    Achieving <b>Mind Clarity</b> requires separating your emotional reactions from your logical analysis.
+                </p>
             </div>
         </section>
 
-        <form id="quizForm" class="space-y-8">
+        <section class="bg-white p-6 rounded-2xl shadow-lg mb-8">
+            <h2 class="text-2xl font-bold text-indigo-800 mb-4 border-b-2 border-indigo-100 pb-2">2. Key Vocabulary</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-3 bg-gray-50 rounded-lg border border-gray-200"><strong>Rational Observer:</strong> A mental state where you analyze your own thoughts without being controlled by them.</div>
+                <div class="p-3 bg-gray-50 rounded-lg border border-gray-200"><strong>Targeted:</strong> When a system or mind is specifically aimed at by an external influence.</div>
+                <div class="p-3 bg-gray-50 rounded-lg border border-gray-200"><strong>Bias:</strong> A cognitive shortcut that often leads to illogical conclusions.</div>
+                <div class="p-3 bg-gray-50 rounded-lg border border-gray-200"><strong>Clarity:</strong> The quality of being coherent, intelligible, and free from confusion.</div>
+                <div class="p-3 bg-gray-50 rounded-lg border border-gray-200"><strong>Outsmart:</strong> To defeat or get the better of someone (or your own brain) by being more clever.</div>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-2xl shadow-lg mb-8">
+            <h2 class="text-2xl font-bold text-indigo-800 mb-6 border-b-2 border-indigo-100 pb-2">3. Mind Clarity & Grammar Quiz</h2>
             
-            <div class="bg-white p-6 rounded-2xl shadow-lg">
-                <h2 class="text-xl font-bold text-blue-600 mb-6 border-b pb-2">Partie 1 : Prononciation & Phonétique</h2>
-                
-                <div class="question-block mb-8" data-correct="k">
-                    <p class="font-semibold">1. Dans le mot "Knowledge", quelle lettre est muette ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer hover:bg-gray-50"><input type="radio" name="q1" value="n"> La lettre 'n'</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer hover:bg-gray-50"><input type="radio" name="q1" value="k"> La lettre 'k'</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer hover:bg-gray-50"><input type="radio" name="q1" value="l"> La lettre 'l'</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer hover:bg-gray-50"><input type="radio" name="q1" value="d"> La lettre 'd'</label>
-                    </div>
-                    <div class="explanation">Le 'k' est muet devant un 'n' en début de mot (ex: knife, knee, knowledge).</div>
+            <div id="quiz-container" class="space-y-6">
                 </div>
 
-                <div class="question-block mb-8" data-correct="f">
-                    <p class="font-semibold">2. Comment se prononce la fin de "Enough" (/ɪˈnʌf/) ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q2" value="f"> Comme un 'f'</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q2" value="p"> Comme un 'p'</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q2" value="silent"> C'est muet</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q2" value="g"> Comme un 'g' dur</label>
-                    </div>
-                    <div class="explanation">Dans "Enough", "Rough" ou "Tough", le 'gh' se prononce /f/.</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="sh">
-                    <p class="font-semibold">3. Le mot "Information" possède un son spécifique. Lequel ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q3" value="sh"> Le suffixe -tion se prononce "shun"</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q3" value="t"> Le 't' est prononcé très fort</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q3" value="ee"> Le 'i' est long comme dans "tree"</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q3" value="no"> Le 'o' est muet</label>
-                    </div>
-                    <div class="explanation">En anglais, "-tion" se prononce presque toujours /ʃən/ (shun).</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="chaos">
-                    <p class="font-semibold">4. Comment se prononce le 'ch' dans "Chaos" ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q4" value="sh"> Comme "chat" (ch)</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q4" value="chaos"> Comme un 'k' (k)</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q4" value="h"> Comme un 'h' aspiré</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q4" value="s"> Comme un 's'</label>
-                    </div>
-                    <div class="explanation">D'origine grecque, le 'ch' de "chaos" ou "architecture" se prononce /k/.</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="focus">
-                    <p class="font-semibold">5. Sur quelle syllabe l'accent tonique tombe-t-il dans "Focus" ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q5" value="focus"> La première (FO-cus)</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q5" value="sec"> La deuxième (fo-CUS)</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q5" value="both"> Les deux également</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q5" value="none"> Aucune</label>
-                    </div>
-                    <div class="explanation">La plupart des noms de deux syllabes en anglais sont accentués sur la première.</div>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow-lg">
-                <h2 class="text-xl font-bold text-green-600 mb-6 border-b pb-2">Partie 2 : Vocabulaire</h2>
-                
-                <div class="question-block mb-8" data-correct="autopilot">
-                    <p class="font-semibold">6. Que signifie "To operate on autopilot" ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q6" value="fly"> Piloter un avion réel.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q6" value="autopilot"> Agir de manière automatique sans réfléchir.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q6" value="tech"> Réparer un ordinateur.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q6" value="fast"> Courir très vite.</label>
-                    </div>
-                    <div class="explanation">L'autopilote cérébral désigne nos comportements réactifs et inconscients décrits au début de la vidéo.</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="reframing">
-                    <p class="font-semibold">7. Qu'est-ce que le "Reframing" (recadrage) ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q7" value="photo"> Mettre une photo dans un cadre.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q7" value="reframing"> Changer sa perspective sur une situation.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q7" value="delete"> Supprimer un souvenir.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q7" value="build"> Construire une maison.</label>
-                    </div>
-                    <div class="explanation">Recadrer consiste à voir une attaque comme une simple "donnée brute" pour ne plus en souffrir.</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="blank">
-                    <p class="font-semibold">8. "A blank slate" (une ardoise vide) signifie :</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q8" value="black"> Un tableau noir cassé.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q8" value="blank"> Un esprit sans idées préconçues ou émotions parasites.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q8" value="expensive"> Un objet de luxe.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q8" value="empty"> Une bouteille vide.</label>
-                    </div>
-                    <div class="explanation">La "Tabula Rasa" ou ardoise vide est l'état recherché par le "White Room Mindset".</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="grit">
-                    <p class="font-semibold">9. "Grit" dans la vidéo fait référence à :</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q9" value="dirt"> De la poussière.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q9" value="grit"> La force de caractère / l'adhérence pour avancer.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q9" value="food"> Un type de nourriture.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q9" value="sleep"> Un manque de sommeil.</label>
-                    </div>
-                    <div class="explanation">La résistance crée le "grit" (l'accroche) nécessaire pour progresser sans glisser.</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="clutter">
-                    <p class="font-semibold">10. "Mental clutter" est :</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q10" value="clutter"> L'encombrement / le désordre mental.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q10" value="clear"> Une idée brillante.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q10" value="music"> Une mélodie répétitive.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q10" value="math"> Un calcul complexe.</label>
-                    </div>
-                    <div class="explanation">Le désordre mental est ce que l'on cherche à éliminer avec la coupure de 20h.</div>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow-lg">
-                <h2 class="text-xl font-bold text-purple-600 mb-6 border-b pb-2">Partie 3 : Grammaire</h2>
-                
-                <div class="question-block mb-8" data-correct="unless">
-                    <p class="font-semibold">11. "Words have no power UNLESS you choose to react." Que signifie UNLESS ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q11" value="if"> Si (If)</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q11" value="unless"> À moins que (Except if)</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q11" value="because"> Parce que (Because)</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q11" value="when"> Quand (When)</label>
-                    </div>
-                    <div class="explanation">"Unless" introduit une condition négative : à moins que vous ne décidiez de réagir.</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="ing">
-                    <p class="font-semibold">12. Dans "Refusing to react", pourquoi utilise-t-on la forme en -ING ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q12" value="present"> C'est du présent continu.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q12" value="ing"> Le verbe agit comme un nom (Gérondif).</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q12" value="future"> C'est une forme de futur.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q12" value="error"> C'est une erreur de grammaire.</label>
-                    </div>
-                    <div class="explanation">Lorsqu'un verbe est le sujet de la phrase, on utilise souvent le gérondif (-ing).</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="superlative">
-                    <p class="font-semibold">13. "Most complex equations". Quel est le degré de l'adjectif ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q13" value="comparative"> Comparatif</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q13" value="superlative"> Superlatif (Le plus...)</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q13" value="normal"> Normal</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q13" value="neg"> Négatif</label>
-                    </div>
-                    <div class="explanation">"The most" est utilisé pour le superlatif des adjectifs longs.</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="modal">
-                    <p class="font-semibold">14. Dans "You MUST adopt...", que traduit le modal MUST ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q14" value="ability"> Une capacité.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q14" value="modal"> Une obligation forte ou une nécessité.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q14" value="permission"> Une permission.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q14" value="past"> Une action passée.</label>
-                    </div>
-                    <div class="explanation">"Must" exprime une nécessité absolue pour réussir le changement.</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="passive">
-                    <p class="font-semibold">15. "How your system IS BEING TARGETED". Quelle est cette structure ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q15" value="active"> Voix active.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q15" value="passive"> Voix passive continue (On est en train de vous cibler).</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q15" value="simple"> Présent simple.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q15" value="imperative"> Impératif.</label>
-                    </div>
-                    <div class="explanation">La voix passive souligne que le cerveau est la victime (l'objet) de l'action des algorithmes.</div>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow-lg">
-                <h2 class="text-xl font-bold text-red-600 mb-6 border-b pb-2">Partie 4 : Compréhension</h2>
-                
-                <div class="question-block mb-8" data-correct="framing">
-                    <p class="font-semibold">16. Pourquoi choisit-on la viande "99% fat-free" plutôt que "1% fat" ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q16" value="framing"> À cause de l'effet de cadrage (framing effect).</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q16" value="diff"> Parce que les produits sont différents.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q16" value="price"> Parce que c'est moins cher.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q16" value="taste"> Pour le goût.</label>
-                    </div>
-                    <div class="explanation">Même si les chiffres sont identiques, la présentation positive influence notre choix.</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="three">
-                    <p class="font-semibold">17. Quel est le but de la règle des 3 secondes ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q17" value="run"> S'enfuir rapidement.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q17" value="three"> Créer un vide pour forcer l'autre à faire face à son insécurité.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q17" value="math"> Calculer une réponse mathématique.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q17" value="breathe"> Respirer pour s'endormir.</label>
-                    </div>
-                    <div class="explanation">Ce silence rompt le cycle de réaction émotionnelle et vous redonne le pouvoir.</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="flow">
-                    <p class="font-semibold">18. Quelles sont les 3 clés pour entrer en état de "Flow" ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q18" value="flow"> Défi adapté, zéro distraction, une petite victoire rapide.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q18" value="easy"> Travail facile, musique, café.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q18" value="long"> Travailler 10 heures, sans pause, seul.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q18" value="group"> Travail d'équipe, réunions, téléphone.</label>
-                    </div>
-                    <div class="explanation">L'état de Flow est une "ingénierie biologique" qui nécessite ces trois conditions.</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="cross">
-                    <p class="font-semibold">19. Pourquoi Steve Jobs étudiait-il la calligraphie ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q19" value="cross"> C'est de la pollinisation croisée (cross-pollination) d'idées.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q19" value="boring"> Parce qu'il s'ennuyait en informatique.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q19" value="money"> Pour gagner de l'argent en vendant des polices.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q19" value="family"> Pour faire plaisir à sa famille.</label>
-                    </div>
-                    <div class="explanation">Des intérêts divers permettent de créer des connexions que les autres ne voient pas (ex: le design du Mac).</div>
-                </div>
-
-                <div class="question-block mb-8" data-correct="consolidate">
-                    <p class="font-semibold">20. Pourquoi instaurer un "cut-off" (arrêt) à 20h ?</p>
-                    <div class="mt-3 space-y-2">
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q20" value="save"> Pour économiser l'électricité.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q20" value="consolidate"> Pour laisser le cerveau consolider les informations sans interférence.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q20" value="tv"> Pour regarder la télévision.</label>
-                        <label class="block p-3 border rounded-lg cursor-pointer"><input type="radio" name="q20" value="friends"> Pour sortir avec des amis.</label>
-                    </div>
-                    <div class="explanation">Arrêter les nouvelles données permet au cerveau de traiter les problèmes en arrière-plan.</div>
-                </div>
-            </div>
-
-            <div class="text-center pb-20">
-                <button type="button" onclick="checkAnswers()" class="bg-indigo-600 text-white px-12 py-4 rounded-full font-bold text-xl hover:bg-indigo-700 transition shadow-xl">
-                    Valider mes réponses
+            <div class="mt-10 text-center">
+                <button onclick="checkAnswers()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg">
+                    Submit & Check Logic
                 </button>
             </div>
-        </form>
+        </section>
 
-        <div id="resultBox" class="hidden bg-white p-8 rounded-2xl shadow-2xl text-center mb-20 border-4 border-indigo-500">
-            <h2 class="text-3xl font-bold mb-2">Votre Score</h2>
+        <div id="resultBox" class="hidden bg-white p-10 rounded-2xl shadow-2xl text-center mb-20 border-t-8 border-indigo-600">
+            <h2 class="text-3xl font-bold mb-2">Final Evaluation</h2>
             <p id="scoreDisplay" class="text-6xl font-black text-indigo-600">0 / 20</p>
-            <p class="text-gray-500 mt-4 italic">"An observer understands how their own system is being targeted."</p>
+            <p id="feedbackMessage" class="text-gray-500 mt-4 italic font-medium"></p>
         </div>
     </div>
 
     <script>
+        const quizData = [
+            // Vocabulary & Mind Clarity (1-10)
+            { q: "According to the Rational Observer theory, an observer...", options: ["Reacts emotionally to every event", "Understands how their system is targeted", "Ignores external data", "Always follows their intuition"], correct: "1", exp: "Mind clarity comes from understanding the external pressures on your decision-making." },
+            { q: "What is the opposite of 'Clarity'?", options: ["Confusion", "Transparency", "Intelligence", "Logic"], correct: "0", exp: "Confusion is the lack of clarity, preventing rational observation." },
+            { q: "If your brain is 'targeted' by a bias, it means...", options: ["It is being improved", "It is being aimed at", "It is moving faster", "It is resting"], correct: "1", exp: "'Targeted' refers to an influence focusing on a specific vulnerability." },
+            { q: "The word 'Outsmart' means to be...", options: ["Faster", "More clever", "Loudest", "Stronger"], correct: "1", exp: "To outsmart your own brain is to use logic to bypass emotional traps." },
+            { q: "A 'Rational' decision is based on...", options: ["Emotions", "Logic and facts", "Random luck", "Old habits"], correct: "1", exp: "Rationality requires objective analysis rather than impulse." },
+            { q: "The 'Observer' effect suggests we should...", options: ["Watch ourselves think", "Stop thinking", "Talk more", "Read more books"], correct: "0", exp: "Observing your own thoughts allows you to identify biases before they act." },
+            { q: "What does 'Inference' mean?", options: ["A direct fact", "A conclusion based on evidence", "A complete lie", "A physical object"], correct: "1", exp: "We infer meaning when we observe patterns logically." },
+            { q: "A 'Cognitive Trap' is designed to...", options: ["Help you learn", "Fool your brain", "Clean your mind", "Store memories"], correct: "1", exp: "Biases and fallacies are traps that Mind Clarity helps us avoid." },
+            { q: "To 'Analyze' is to...", options: ["Break down into parts", "Put together", "Throw away", "Repeat without thinking"], correct: "0", exp: "Analysis is the core tool of the Rational Observer." },
+            { q: "A 'Perspective' is...", options: ["A physical tool", "A point of view", "A mathematical error", "A type of bias"], correct: "1", exp: "Changing perspective is often necessary to achieve clarity." },
+
+            // Comparative & Superlative Logic (11-20)
+            { q: "Comparative of 'Clear'?", options: ["More clear", "Clearer", "Clearest", "More clearer"], correct: "1", exp: "Short adjective (1 syllable) rule: add '-er'." },
+            { q: "Superlative of 'Rational'?", options: ["The rationalest", "More rational", "The most rational", "Rationalest"], correct: "2", exp: "Long adjective (3+ syllables): use 'the most'." },
+            { q: "Comparative of 'Bad'?", options: ["Badder", "Worse", "Worst", "The worst"], correct: "1", exp: "'Bad' is irregular: Bad -> Worse." },
+            { q: "Superlative of 'Good'?", options: ["The goodest", "The better", "The best", "Best"], correct: "2", exp: "'Good' is irregular: Good -> Better -> The Best." },
+            { q: "Comparative of 'Zany'?", options: ["More zany", "Zanier", "Zanyer", "The zaniest"], correct: "1", exp: "Y changes to 'ier' for comparatives." },
+            { q: "Superlative of 'Vulnerable'?", options: ["Vulnerablest", "The more vulnerable", "The most vulnerable", "Most vulnerablest"], correct: "2", exp: "Long adjectives always use 'the most'." },
+            { q: "Comparative of 'Big'?", options: ["Bigger", "Biger", "More big", "Bigest"], correct: "0", exp: "CVC rule: double the final consonant (Big -> Bigger)." },
+            { q: "Comparative of 'Clever'?", options: ["Cleverer", "More clever", "Both A and B", "Cleverest"], correct: "2", exp: "'Clever' is a 2-syllable adjective that can take either form." },
+            { q: "Complete: 'Logic is ____ (useful) than emotion.'", options: ["usefuler", "the most useful", "more useful", "as useful"], correct: "2", exp: "'Useful' is treated as a long adjective: 'more useful'." },
+            { q: "Superlative of 'Weak'?", options: ["The most weak", "The weaker", "The weakest", "The most weakest"], correct: "2", exp: "Short adjective (1 syllable): add '-est'." }
+        ];
+
+        const container = document.getElementById('quiz-container');
+        quizData.forEach((data, index) => {
+            const block = document.createElement('div');
+            block.className = 'question-block p-6 rounded-xl border-2 border-gray-100 transition-all bg-white';
+            block.setAttribute('data-correct', data.correct);
+            block.innerHTML = `
+                <p class="text-lg font-bold text-indigo-900 mb-4">${index + 1}. ${data.q}</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    ${data.options.map((opt, i) => `
+                        <label class="flex items-center p-3 rounded-lg border border-gray-200 option-hover transition-colors">
+                            <input type="radio" name="q${index}" value="${i}" class="w-4 h-4 text-indigo-600">
+                            <span class="ml-3 text-sm font-medium text-gray-700">${opt}</span>
+                        </label>
+                    `).join('')}
+                </div>
+                <div class="explanation mt-4 p-3 rounded bg-blue-50 text-blue-800 text-xs"><strong>Logic:</strong> ${data.exp}</div>
+            `;
+            container.appendChild(block);
+        });
+
         function checkAnswers() {
             const questions = document.querySelectorAll('.question-block');
             let score = 0;
@@ -287,7 +121,6 @@
                 const selected = q.querySelector('input[type="radio"]:checked');
                 const correctAnswer = q.getAttribute('data-correct');
                 const explanation = q.querySelector('.explanation');
-                
                 explanation.style.display = 'block';
 
                 if (selected && selected.value === correctAnswer) {
@@ -302,8 +135,11 @@
 
             const resultBox = document.getElementById('resultBox');
             const scoreDisplay = document.getElementById('scoreDisplay');
+            const feedback = document.getElementById('feedbackMessage');
+            
             resultBox.classList.remove('hidden');
-            scoreDisplay.innerText = score + " / " + questions.length;
+            scoreDisplay.innerText = `${score} / 20`;
+            feedback.innerText = score >= 16 ? "Exceptional Mind Clarity. You are an Observer." : "Logic rerouting required. Re-evaluate your focus.";
 
             window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }
