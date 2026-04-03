@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday March 27th</title>
+    <style>
+        :root { --primary: #0f172a; --accent: #3b82f6; --bg: #f1f5f9; --white: #ffffff; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #334155; line-height: 1.5; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .card { background: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 25px; }
+        h1, h2, h3 { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 5px; }
+        
+        /* Vocabulary Grid */
+        .vocab-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .vocab-group { background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .vocab-item { margin-bottom: 10px; font-size: 0.95rem; }
+        .word { font-weight: bold; color: var(--accent); }
+        .syn { color: #64748b; font-style: italic; font-size: 0.85rem; }
+
+        /* Comparison Table */
+        .scroll-table { overflow-x: auto; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { border: 1px solid #e2e8f0; padding: 10px; text-align: left; font-size: 0.9rem; }
+        th { background: #f1f5f9; position: sticky; top: 0; }
+        tr:nth-child(even) { background: #f8fafc; }
+
+        /* Quiz */
+        .quiz-container { background: #eff6ff; padding: 25px; border-radius: 12px; }
+        .question { font-weight: 600; margin-top: 20px; display: block; color: var(--primary); }
+        .btn { background: var(--accent); color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; margin-top: 30px; font-size: 1rem; }
+        .feedback { margin-top: 20px; padding: 15px; border-radius: 8px; display: none; text-align: center; font-weight: bold; }
+    </style>
+</head>
+<body>
+<nav><a href="../index.html">← Back to Home Hub</a></nav>
+<div class="container">
+    <header class="card" style="text-align: center; border-top: 6px solid var(--accent);">
+        <h1>Session 2: Logic & Optimization</h1>
+        <p>Comprehensive vocabulary, grammar logic, and technical English optimization.</p>
+    </header>
+
+    <section class="card">
+        <h2>1. Vocabulary & Semantics</h2>
+        <div class="vocab-section">
+            <div class="vocab-group">
+                <h3>Actions (Verbes)</h3>
+                <div class="vocab-item"><span class="word">To waste:</span> to use inefficiently.</div>
+                <div class="vocab-item"><span class="word">To break down:</span> to decompose.</div>
+                <div class="vocab-item"><span class="word">To skim:</span> to read a text quickly.</div>
+                <div class="vocab-item"><span class="word">To allow / permit / authorise:</span> <span class="syn">to let.</span></div>
+                <div class="vocab-item"><span class="word">To avoid / escape / evade:</span> to stay away.</div>
+                <div class="vocab-item"><span class="word">To trick / cheat:</span> <span class="syn">to deceive.</span></div>
+                <div class="vocab-item"><span class="word">To glance (at):</span> to look quickly (at).</div>
+                <div class="vocab-item"><span class="word">To read out loud:</span> to read with SOUND.</div>
+            </div>
+            <div class="vocab-group">
+                <h3>Concepts (Noms & Adverbes)</h3>
+                <div class="vocab-item"><span class="word">Workload:</span> amount of work.</div>
+                <div class="vocab-item"><span class="word">Worth:</span> value.</div>
+                <div class="vocab-item"><span class="word">Straight:</span> direct.</div>
+                <div class="vocab-item"><span class="word">Anchor:</span> device/method to restrict motion or fix attention.</div>
+                <div class="vocab-item"><span class="word">Must:</span> (moral) obligation.</div>
+                <div class="vocab-item"><span class="word">Forever:</span> always.</div>
+                <div class="vocab-item"><span class="word">Loud:</span> <span class="syn">noisy / high in volume.</span></div>
+                <div class="vocab-item"><span class="word">Chunk:</span> large piece.</div>
+                <div class="vocab-item"><span class="word">Alongside:</span> <span class="syn">by the side / beside.</span></div>
+                <div class="vocab-item"><span class="word">Along:</span> through.</div>
+            </div>
+            <div class="vocab-group">
+                <h3>Abstracts & Synthesis</h3>
+                <div class="vocab-item"><span class="word">Summary / Recapitulation:</span> brief account of main points.</div>
+                <div class="vocab-item"><span class="word">Synthesis:</span> merging entities into a single unified entity.</div>
+                <div class="vocab-item"><span class="word">Own:</span> relating to / belonging to oneself.</div>
+                <div class="vocab-item"><span class="word">Highlighter:</span> fluorescent marker pen.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>2. The Complete Comparative Logic (52 Adjectives)</h2>
+        <div class="scroll-table">
+            <table id="adjTable">
+                <thead>
+                    <tr><th>Adjective</th><th>Comparative</th><th>Superlative</th></tr>
+                </thead>
+                <tbody id="adjBody">
+                    </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="card quiz-container">
+        <h2>3. Knowledge Integration Test</h2>
+        <div id="quiz">
+            <span class="question">1. If you "skim" a text, you are:</span>
+            <label><input type="radio" name="q1" value="c"> Reading quickly for the main idea.</label><br>
+            <label><input type="radio" name="q1" value="w"> Reading every word out loud.</label>
+
+            <span class="question">2. Which sentence is grammatically correct?</span>
+            <label><input type="radio" name="q2" value="w"> My workload is more big than yours.</label><br>
+            <label><input type="radio" name="q2" value="c"> My workload is bigger than yours.</label>
+
+            <span class="question">3. "To allow" is a synonym of:</span>
+            <label><input type="radio" name="q3" value="c"> To permit.</label><br>
+            <label><input type="radio" name="q3" value="w"> To avoid.</label>
+
+            <span class="question">4. Efficient focuses on _____ while Effective focuses on _____.</span>
+            <label><input type="radio" name="q4" value="c"> Resources / Results.</label><br>
+            <label><input type="radio" name="q4" value="w"> Results / Resources.</label>
+
+            <span class="question">5. What is a "chunk" of information?</span>
+            <label><input type="radio" name="q5" value="c"> A large piece or section.</label><br>
+            <label><input type="radio" name="q5" value="w"> A very small detail.</label>
+
+            <span class="question">6. Superlative of "Knowledgeable":</span>
+            <label><input type="radio" name="q6" value="c"> The most knowledgeable.</label><br>
+            <label><input type="radio" name="q6" value="w"> The knowledgeablest.</label>
+
+            <button class="btn" onclick="validateQuiz()">Check My Progress</button>
+            <div id="res" class="feedback"></div>
+        </div>
+    </section>
+</div>
+
+<script>
+    const adjectives = [
+        ["Altruistic", "More altruistic than", "The most altruistic"], ["Angry", "Angrier than", "The angriest"],
+        ["Bad", "Worse than", "The worst"], ["Beautiful", "More beautiful than", "The most beautiful"],
+        ["Cold", "Colder than", "The coldest"], ["Competent", "More competent than", "The most competent"],
+        ["Dark", "Darker than", "The darkest"], ["Difficult", "More difficult than", "The most difficult"],
+        ["Easy", "Easier than", "The easiest"], ["Efficient", "More efficient than", "The most efficient"],
+        ["Famous", "More famous than", "The most famous"], ["Fun (Funny)", "Funnier than", "The funniest"],
+        ["Generous", "More generous than", "The most generous"], ["Good", "Better than", "The best"],
+        ["Hard", "Harder than", "The hardest"], ["Honest", "More honest than", "The most honest"],
+        ["Icy", "Icier than", "The iciest"], ["Important", "More important than", "The most important"],
+        ["Jealous", "More jealous than", "The most jealous"], ["Just", "Juster than", "The justest"],
+        ["Kind", "Kinder than", "The kindest"], ["Knowledgeable", "More knowledgeable than", "The most knowledgeable"],
+        ["Logical", "More logical than", "The most logical"], ["Long", "Longer than", "The longest"],
+        ["Mad", "Madder than", "The maddest"], ["Modern", "More modern than", "The most modern"],
+        ["New", "Newer than", "The newest"], ["Nervous", "More nervous than", "The most nervous"],
+        ["Old", "Older than", "The oldest"], ["Optimistic", "More optimistic than", "The most optimistic"],
+        ["Patient", "More patient than", "The most patient"], ["Proud", "Prouder than", "The proudest"],
+        ["Quantitative", "More quantitative than", "The most quantitative"], ["Quick", "Quicker than", "The quickest"],
+        ["Rational", "More rational than", "The most rational"], ["Rich", "Richer than", "The richest"],
+        ["Sensitive", "More sensitive than", "The most sensitive"], ["Short", "Shorter than", "The shortest"],
+        ["Tall", "Taller than", "The tallest"], ["Tolerant", "More tolerant than", "The most tolerant"],
+        ["Ugly", "Uglier than", "The ugliest"], ["Useful", "More useful than", "The most useful"],
+        ["Vague", "Vaguer than", "The vaguest"], ["Vulnerable", "More vulnerable than", "The most vulnerable"],
+        ["Weak", "Weaker than", "The weakest"], ["Wonderful", "More wonderful than", "The most wonderful"],
+        ["Xenophobic", "More xenophobic than", "The most xenophobic"], ["Young", "Younger than", "The youngest"],
+        ["Youthful", "More youthful than", "The most youthful"], ["Zany", "Zanier than", "The zaniest"],
+        ["Zealous", "More zealous than", "The most zealous"]
+    ];
+
+    const body = document.getElementById('adjBody');
+    adjectives.forEach(a => {
+        body.innerHTML += `<tr><td>${a[0]}</td><td>${a[1]}</td><td>${a[2]}</td></tr>`;
+    });
+
+    function validateQuiz() {
+        const correctAnswers = { q1: 'c', q2: 'c', q3: 'c', q4: 'c', q5: 'c', q6: 'c' };
+        let score = 0;
+        let total = 6;
+        for (let q in correctAnswers) {
+            const sel = document.querySelector(`input[name="${q}"]:checked`);
+            if (sel && sel.value === correctAnswers[q]) score++;
+        }
+        const res = document.getElementById('res');
+        res.style.display = 'block';
+        res.style.background = score === total ? "#dcfce7" : "#fee2e2";
+        res.style.color = score === total ? "#166534" : "#991b1b";
+        res.innerHTML = `Final Score: ${score}/${total}. ` + (score === total ? "Mastery Achieved!" : "Check the definitions and the table above.");
+    }
+</script>
+
+</body>
+</html>

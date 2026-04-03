@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Sowell: The 20 Quotes Logic Challenge</title>
+    <link rel="stylesheet" href="../style-session.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --success: #27ae60;
+            --error: #e74c3c;
+            --bg: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: #333; line-height: 1.6; padding-bottom: 50px; }
+        nav { background: var(--primary); padding: 15px; text-align: center; margin-bottom: 30px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
+        .header-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; margin-bottom: 30px; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin: 20px 0; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        .category-title { 
+            background: var(--primary); color: white; padding: 15px; 
+            border-radius: 8px; margin: 40px 0 20px 0; font-size: 1.2rem; font-weight: bold;
+        }
+
+        .question-card { background: var(--card-bg); padding: 25px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #ddd; transition: 0.3s; }
+        .question-text { font-weight: bold; font-size: 1.05rem; margin-bottom: 15px; color: #2c3e50; }
+        
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 600px) { .options-grid { grid-template-columns: 1fr; } }
+        
+        .option { 
+            padding: 12px; border: 2px solid #eee; border-radius: 8px; 
+            cursor: pointer; display: flex; align-items: center; font-size: 0.95rem; transition: 0.2s;
+        }
+        .option:hover { background: #f8f9fa; border-color: var(--accent); }
+        .option input { margin-right: 12px; cursor: pointer; }
+
+        /* Classes de correction */
+        .explanation { 
+            display: none; margin-top: 20px; padding: 15px; 
+            background: #f0f7ff; border-left: 5px solid var(--accent); font-size: 0.9rem; border-radius: 4px;
+        }
+        .correct { background: #d4edda !important; border-color: var(--success) !important; color: #155724; font-weight: bold; }
+        .wrong { background: #f8d7da !important; border-color: var(--error) !important; color: #721c24; }
+
+        #floating-results { 
+            display: none; position: sticky; top: 20px; z-index: 1000; 
+            background: var(--primary); color: white; padding: 15px; 
+            border-radius: 8px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        .submit-btn { 
+            display: block; width: 100%; max-width: 300px; margin: 40px auto; 
+            padding: 15px; background: var(--accent); color: white; 
+            border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer;
+        }
+        .submit-btn:hover { filter: brightness(1.1); }
+    </style>
+</head>
+<body>
+
+<nav><a href="../index.html">← Back to Learning Hub</a></nav>
+
+<div class="container">
+    <div class="header-card">
+        <h1><a href="https://en.wikipedia.org/wiki/Thomas_Sowell" target="_blank" rel="noopener noreferrer">Thomas Sowell</a>: 20 Quotes Mastery</h1>
+        <p>Analyze the logic, master the vocabulary, and sharpen your phonetics.</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/pWu3WGc9Kb8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div id="floating-results">
+        <h2 id="score-display">Your Score: 0 / 20</h2>
+        <p>Check the detailed explanations below.</p>
+    </div>
+
+    <form id="quiz-form">
+        <div class="category-title">I. PRONUNCIATION & PHONETICS</div>
+
+        <div class="question-card">
+            <p class="question-text">1. Which phoneme is silent in the word "Knowledge"?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q1" value="w"> The 'w' only</label>
+                <label class="option"><input type="radio" name="q1" value="w"> The 'k' only</label>
+                <label class="option" data-correct="true"><input type="radio" name="q1" value="c"> Both 'k' and 'w'</label>
+                <label class="option"><input type="radio" name="q1" value="w"> The 'd' and 'g'</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> In English, 'k' is always silent before 'n' (like <i>knee, knife</i>). The 'w' is also silent as part of the vowel sound /ɒ/. IPA: /ˈnɒlɪdʒ/.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">2. What is the correct stress pattern for "Hypocrites"?</p>
+            <div class="options-grid">
+                <label class="option" data-correct="true"><input type="radio" name="q2" value="c"> HY-po-crites (1st syllable)</label>
+                <label class="option"><input type="radio" name="q2" value="w"> hy-PO-crites (2nd syllable)</label>
+                <label class="option"><input type="radio" name="q2" value="w"> hy-po-CRITES (3rd syllable)</label>
+                <label class="option"><input type="radio" name="q2" value="w"> It changes if it is a verb</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> For this noun, the stress is on the first syllable. IPA: /ˈhɪpəkrɪts/.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">3. In "Decision", how is the 's' pronounced?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q3" value="w"> Like /s/ (Sun)</label>
+                <label class="option"><input type="radio" name="q3" value="w"> Like /z/ (Zebra)</label>
+                <label class="option" data-correct="true"><input type="radio" name="q3" value="c"> Like /ʒ/ (Vision/Measure)</label>
+                <label class="option"><input type="radio" name="q3" value="w"> It is silent</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> The '-sion' suffix after a vowel usually produces the voiced palato-alveolar fricative /ʒ/.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">4. Which word has a different vowel sound than "Greed"?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q4" value="w"> Need</label>
+                <label class="option"><input type="radio" name="q4" value="w"> People</label>
+                <label class="option" data-correct="true"><input type="radio" name="q4" value="c"> Dead</label>
+                <label class="option"><input type="radio" name="q4" value="w"> Achievement</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> "Greed", "Need", "People", and "Achievement" all use the long /iː/. "Dead" uses the short /e/.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">5. Where is the stress in the word "Superiority"?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q5" value="w"> SU-periority</label>
+                <label class="option" data-correct="true"><input type="radio" name="q5" value="c"> superi-OR-ity</label>
+                <label class="option"><input type="radio" name="q5" value="w"> superior-I-ty</label>
+                <label class="option"><input type="radio" name="q5" value="w"> su-PE-riority</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> Words ending in '-ity' almost always have the primary stress on the syllable immediately preceding the suffix.</div>
+        </div>
+
+        <div class="category-title">II. VOCABULARY & SEMANTICS</div>
+
+        <div class="question-card">
+            <p class="question-text">6. "There are no solutions, only trade-offs." What is a "Trade-off"?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q6" value="w"> A business partnership</label>
+                <label class="option" data-correct="true"><input type="radio" name="q6" value="c"> A balance achieved between two incompatible features</label>
+                <label class="option"><input type="radio" name="q6" value="w"> A type of financial fraud</label>
+                <label class="option"><input type="radio" name="q6" value="w"> A complete victory</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> A trade-off (un compromis) means you must give up something to get something else; there is no "perfect" cost-free solution.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">7. What does "Scarcity" mean in an economic context?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q7" value="w"> A state of extreme wealth</label>
+                <label class="option" data-correct="true"><input type="radio" name="q7" value="c"> Limited availability of resources</label>
+                <label class="option"><input type="radio" name="q7" value="w"> The study of historical prices</label>
+                <label class="option"><input type="radio" name="q7" value="w"> Government intervention</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> Scarcity (la rareté) is the fundamental economic problem of having seemingly unlimited human wants in a world of limited resources.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">8. A "Race Hustler" is someone who:</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q8" value="w"> Works hard to end racism</label>
+                <label class="option" data-correct="true"><input type="radio" name="q8" value="c"> Profits by provoking racial tension</label>
+                <label class="option"><input type="radio" name="q8" value="w"> Competes in athletic races</label>
+                <label class="option"><input type="radio" name="q8" value="w"> Is a victim of discrimination</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> "Hustler" implies a manipulator or someone running a scam. A race hustler uses racial issues for personal or political gain.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">9. "It is usually futile to talk facts..." What is the synonym of "Futile"?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q9" value="w"> Essential</label>
+                <label class="option"><input type="radio" name="q9" value="w"> Productive</label>
+                <label class="option" data-correct="true"><input type="radio" name="q9" value="c"> Pointless</label>
+                <label class="option"><input type="radio" name="q9" value="w"> Dangerous</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> "Futile" means incapable of producing any useful result; vain or useless.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">10. To "Disregard" a lesson means:</p>
+            <div class="options-grid">
+                <label class="option" data-correct="true"><input type="radio" name="q10" value="c"> To ignore or pay no attention to it</label>
+                <label class="option"><input type="radio" name="q10" value="w"> To study it carefully</label>
+                <label class="option"><input type="radio" name="q10" value="w"> To improve upon it</label>
+                <label class="option"><input type="radio" name="q10" value="w"> To share it with others</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> Disregard (ignorer/mépriser) means to treat something as unworthy of consideration.</div>
+        </div>
+
+        <div class="category-title">III. LOGICAL COMPREHENSION</div>
+
+        <div class="question-card">
+            <p class="question-text">11. Why is putting decisions in the hands of people who "pay no price for being wrong" dangerous?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q11" value="w"> Because they are not smart enough</label>
+                <label class="option" data-correct="true"><input type="radio" name="q11" value="c"> Because they have no incentive to be right</label>
+                <label class="option"><input type="radio" name="q11" value="w"> Because it costs too much money</label>
+                <label class="option"><input type="radio" name="q11" value="w"> Because they are too fast at deciding</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> Without consequences (accountability), decision-makers ignore the reality of their failures, leading to repeated "stupid" policies.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">12. Sowell defines "Social Engineering" as replacing what works with:</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q12" value="w"> What is mathematically proven</label>
+                <label class="option"><input type="radio" name="q12" value="w"> What the majority wants</label>
+                <label class="option" data-correct="true"><input type="radio" name="q12" value="c"> What sounds good</label>
+                <label class="option"><input type="radio" name="q12" value="w"> What is expensive</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> Sowell criticizes theorists who abandon functional systems for utopian ideas that "sound good" but fail in practice.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">13. What is the psychological effect of "Preferential Treatment"?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q13" value="w"> People become more efficient</label>
+                <label class="option" data-correct="true"><input type="radio" name="q13" value="c"> Equal treatment starts to feel like discrimination</label>
+                <label class="option"><input type="radio" name="q13" value="w"> Racism disappears completely</label>
+                <label class="option"><input type="radio" name="q13" value="w"> Everyone feels satisfied</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> When a group is used to privileges, losing them for equality feels like a personal attack.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">14. What is Sowell's point about "Greed"?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q14" value="w"> It is the main cause of poverty</label>
+                <label class="option"><input type="radio" name="q14" value="w"> Only rich people are greedy</label>
+                <label class="option" data-correct="true"><input type="radio" name="q14" value="c"> Wanting to take others' money is just as greedy as keeping yours</label>
+                <label class="option"><input type="radio" name="q14" value="w"> Greed is necessary for a good economy</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> He points out the logical hypocrisy of labeling those who earn money as "greedy" while exempting those who wish to seize it.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">15. To defend civilization, Sowell says one must be prepared to:</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q15" value="w"> Use more articulate talkers</label>
+                <label class="option" data-correct="true"><input type="radio" name="q15" value="c"> Use force</label>
+                <label class="option"><input type="radio" name="q15" value="w"> Hold more meetings</label>
+                <label class="option"><input type="radio" name="q15" value="w"> Accept barbarism</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> If you aren't willing to fight for civilization, you implicitly accept its destruction by those who use force.</div>
+        </div>
+
+        <div class="category-title">IV. GRAMMAR & STRUCTURE</div>
+
+        <div class="question-card">
+            <p class="question-text">16. "Racism is kept alive by politicians." What is the grammatical subject?</p>
+            <div class="options-grid">
+                <label class="option" data-correct="true"><input type="radio" name="q16" value="c"> Racism (The receiver of the action)</label>
+                <label class="option"><input type="radio" name="q16" value="w"> Politicians (The doers)</label>
+                <label class="option"><input type="radio" name="q16" value="w"> Alive (The adjective)</label>
+                <label class="option"><input type="radio" name="q16" value="w"> It is an impersonal sentence</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> In a passive sentence, the subject is the person or thing that is acted upon.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">17. "The greatest weapon of mass destruction is stupidity." Identify "Greatest":</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q17" value="w"> Comparative Adjective</label>
+                <label class="option" data-correct="true"><input type="radio" name="q17" value="c"> Superlative Adjective</label>
+                <label class="option"><input type="radio" name="q17" value="w"> Proper Noun</label>
+                <label class="option"><input type="radio" name="q17" value="w"> Adverb of Manner</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> '-est' signifies the superlative degree (the most of something).</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">18. "More stupid or more dangerous." Why do we use "More" here?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q18" value="w"> Because the adjectives are short</label>
+                <label class="option" data-correct="true"><input type="radio" name="q18" value="c"> Because "dangerous" is a long adjective</label>
+                <label class="option"><input type="radio" name="q18" value="w"> Because it is a superlative</label>
+                <label class="option"><input type="radio" name="q18" value="w"> Because Sowell is speaking formally</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> Adjectives with 3 or more syllables (dan-ger-ous) must use "more" for comparatives. Sowell applies it to "stupid" for stylistic parallelism.</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">19. In "Talkers" and "Doers", what does the suffix '-er' indicate?</p>
+            <div class="options-grid">
+                <label class="option"><input type="radio" name="q19" value="w"> The comparative degree</label>
+                <label class="option" data-correct="true"><input type="radio" name="q19" value="c"> The agent (person performing the action)</label>
+                <label class="option"><input type="radio" name="q19" value="w"> A plural marker</label>
+                <label class="option"><input type="radio" name="q19" value="w"> A past tense verb</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> Adding '-er' to a verb creates a noun meaning "someone who does [verb]".</div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">20. "If you are not prepared to use force..." This is a:</p>
+            <div class="options-grid">
+                <label class="option" data-correct="true"><input type="radio" name="q20" value="c"> First Conditional (Real possibility)</label>
+                <label class="option"><input type="radio" name="q20" value="w"> Second Conditional (Imaginary)</label>
+                <label class="option"><input type="radio" name="q20" value="w"> Past Perfect tense</label>
+                <label class="option"><input type="radio" name="q20" value="w"> Passive Imperative</label>
+            </div>
+            <div class="explanation"><b>Correction:</b> "If + Present Simple, then Imperative/Future" is the structure of a real condition and its consequence.</div>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="evaluateQuiz()">Check My Answers</button>
+    </form>
+</div>
+
+<script>
+    function evaluateQuiz() {
+        const form = document.getElementById('quiz-form');
+        const cards = document.querySelectorAll('.question-card');
+        let score = 0;
+
+        cards.forEach((card, index) => {
+            const correctLabel = card.querySelector('label[data-correct="true"]');
+            const selectedInput = card.querySelector('input[type="radio"]:checked');
+            const explanation = card.querySelector('.explanation');
+
+            // Afficher l'explication
+            explanation.style.display = 'block';
+
+            // Marquer la bonne réponse en vert
+            correctLabel.classList.add('correct');
+
+            // Vérifier le choix de l'utilisateur
+            if (selectedInput) {
+                const selectedLabel = selectedInput.parentElement;
+                if (selectedLabel.dataset.correct === "true") {
+                    score++;
+                } else {
+                    selectedLabel.classList.add('wrong');
+                }
+            }
+        });
+
+        // Afficher le score flottant
+        const resultsBanner = document.getElementById('floating-results');
+        const scoreDisplay = document.getElementById('score-display');
+        resultsBanner.style.display = 'block';
+        scoreDisplay.innerText = "Final Score: " + score + " / 20";
+
+        // Remonter en haut de page pour voir le score
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>

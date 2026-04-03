@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Revision Session 1: PQ4R & Phonetics</title>
+    <link rel="stylesheet" href="../style-session.css">
+</head>
+<body>
+    <nav><a href="../index.html">← Back to Hub</a></nav>
+    <div class="container">
+        <h1>Phonetics & Learning Strategy</h1>
+        
+        <div class="summary-box">
+            <h2>I. The PQ4R Method (Mental Workflow)</h2>
+            <p>Order is logic. Mathias must master these 6 steps to optimize his "Workload":</p>
+            <ol>
+                <li><b>Preview:</b> Skim the text for headers/diagrams.</li>
+                <li><b>Question:</b> Turn headers into questions.</li>
+                <li><b>Read:</b> Search for answers to your questions.</li>
+                <li><b>Reflect:</b> Think of examples and mental "Anchors".</li>
+                <li><b>Recite:</b> State the answers out loud (Sound is key).</li>
+                <li><b>Review:</b> Summarize the main points.</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>II. The 30 Phonetic Traps</h2>
+            <p>Every word here has a logical "trap" (Silent letters or unexpected sounds).</p>
+            <table style="width:100%; border-collapse: collapse;">
+                <tr style="background:#eee"><th>Word</th><th>IPA</th><th>The "Trap"</th></tr>
+                <tr><td>Although</td><td>/ɔːlˈðəʊ/</td><td>Silent 'gh'</td></tr>
+                <tr><td>Architecture</td><td>/ˈɑːkɪtektʃə/</td><td>CH = K</td></tr>
+                <tr><td>Debt</td><td>/det/</td><td>Silent 'b'</td></tr>
+                <tr><td>Knowledge</td><td>/ˈnɒlɪdʒ/</td><td>Silent 'k'</td></tr>
+                <tr><td>Muscle</td><td>/ˈmʌsl/</td><td>Silent 'c'</td></tr>
+                <tr><td>Receipt</td><td>/rɪˈsiːt/</td><td>Silent 'p'</td></tr>
+                <tr><td>Schedule</td><td>/ˈʃedjuːl/</td><td>SH in UK</td></tr>
+                <tr><td>Wednesday</td><td>/ˈwenzdeɪ/</td><td>Silent 'd'</td></tr>
+                </table>
+        </div>
+
+        <div class="quiz-section">
+            <h2>III. Grammar & Logic Quiz</h2>
+            <div id="quiz1">
+                <p><b>1. "To Skim" a text means:</b></p>
+                <div class="option-item" onclick="ans(1,1)">A. To read every word carefully.</div>
+                <div class="option-item" onclick="ans(1,2)">B. To look quickly for the main idea.</div>
+                
+                <p><b>2. In "He is a competent engineer", 'competent' is:</b></p>
+                <div class="option-item" onclick="ans(2,1)">A. An Adjective.</div>
+                <div class="option-item" onclick="ans(2,2)">B. An Adverb.</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function ans(q, a) {
+            if((q==1 && a==2) || (q==2 && a==1)) alert("Correct!");
+            else alert("Incorrect logic. Try again.");
+        }
+    </script>
+</body>
+</html>

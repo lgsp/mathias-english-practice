@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structured English Path - Laurent</title>
+    <link rel="stylesheet" href="./css/style-tuesday-2026-03-24.css">
+</head>
+<body>
+<nav><a href="../index.html">← Back to Home Hub</a></nav>
+<div class="container">
+    <header class="card" style="text-align:center;">
+        <h1>Interactive English Syllabus</h1>
+        <p>A logical approach for technical minds. Follow the steps, watch, and test yourself.</p>
+    </header>
+
+    <section class="card">
+        <h2>1. The PQ4R Method (6 Steps)</h2>
+        <p class="explanation">This method helps you store information in long-term memory. Follow the 6 steps explained in the video.</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/FRfVzF8Tk0c" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="quiz-box" id="quiz-pq4r">
+            <span class="question">Step 1: What is the goal of a Preview?</span>
+            <label><input type="radio" name="p1" value="c"> To get an overview of headers and diagrams.</label><br>
+            <label><input type="radio" name="p1" value="w"> To read every word carefully.</label>
+
+            <span class="question">Step 2: How do you create a Question?</span>
+            <label><input type="radio" name="p2" value="c"> By turning subheadings into "What/How" questions.</label><br>
+            <label><input type="radio" name="p2" value="w"> By asking a friend.</label>
+
+            <span class="question">Step 3: What should you focus on during the Read stage?</span>
+            <label><input type="radio" name="p3" value="c"> Looking for answers to your specific questions.</label><br>
+            <label><input type="radio" name="p3" value="w"> Memorizing the text.</label>
+
+            <span class="question">Step 4: What happens during Reflect?</span>
+            <label><input type="radio" name="p4" value="c"> You connect the new data to what you already know.</label><br>
+            <label><input type="radio" name="p4" value="w"> You take a long nap.</label>
+
+            <span class="question">Step 5: What does Recite mean here?</span>
+            <label><input type="radio" name="p5" value="c"> Explaining the concept out loud in your own words.</label><br>
+            <label><input type="radio" name="p5" value="w"> Reading the book out loud.</label>
+
+            <span class="question">Step 6: Why is Review important?</span>
+            <label><input type="radio" name="p6" value="c"> To prevent forgetting over time (Spaced Repetition).</label><br>
+            <label><input type="radio" name="p6" value="w"> To prepare for a test tomorrow only.</label>
+
+            <button class="btn" onclick="checkQuiz('quiz-pq4r')">Check Answers</button>
+            <div class="result" id="res-quiz-pq4r"></div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>2. Comprehensible Input (Vocabulary)</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/bo47JoSxl1s" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="quiz-box" id="quiz-vocab">
+            <span class="question">1. How many words for 95% fluency?</span>
+            <label><input type="radio" name="v1" value="c"> 3,000</label> | <label><input type="radio" name="v1" value="w"> 10,000</label>
+            
+            <span class="question">2. What is "Input"?</span>
+            <label><input type="radio" name="v2" value="c"> Listening and reading.</label> | <label><input type="radio" name="v2" value="w"> Speaking and writing.</label>
+
+            <span class="question">3. What tool helps with long-term memory?</span>
+            <label><input type="radio" name="v3" value="c"> SRS software (like Anki).</label> | <label><input type="radio" name="v3" value="w"> A dictionary.</label>
+
+            <span class="question">4. Why use Vlogs?</span>
+            <label><input type="radio" name="v4" value="c"> Real context and visuals.</label> | <label><input type="radio" name="v4" value="w"> They are free.</label>
+
+            <button class="btn" onclick="checkQuiz('quiz-vocab')">Check Answers</button>
+            <div class="result" id="res-quiz-vocab"></div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>3. Grammar: The 8 Parts of Speech</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/uEq6FWDCwSM" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="quiz-box" id="quiz-grammar">
+            <p>Identify the part of speech for the <b>underlined</b> words:</p>
+            
+            <span class="question">1. The <b>teacher</b> is helpful.</span>
+            <label><input type="radio" name="g1" value="c"> Noun</label> | <label><input type="radio" name="g1" value="w"> Verb</label>
+
+            <span class="question">2. <b>He</b> speaks English.</span>
+            <label><input type="radio" name="g2" value="w"> Adjective</label> | <label><input type="radio" name="g2" value="c"> Pronoun</label>
+
+            <span class="question">3. I <b>study</b> every day.</span>
+            <label><input type="radio" name="g3" value="c"> Verb</label> | <label><input type="radio" name="g3" value="w"> Adverb</label>
+
+            <span class="question">4. The <b>red</b> car is fast.</span>
+            <label><input type="radio" name="g4" value="c"> Adjective</label> | <label><input type="radio" name="g4" value="w"> Conjunction</label>
+
+            <span class="question">5. She speaks <b>slowly</b>.</span>
+            <label><input type="radio" name="g5" value="w"> Noun</label> | <label><input type="radio" name="g5" value="c"> Adverb</label>
+
+            <span class="question">6. The book is <b>on</b> the table.</span>
+            <label><input type="radio" name="g6" value="c"> Preposition</label> | <label><input type="radio" name="g6" value="w"> Interjection</label>
+
+            <span class="question">7. I like tea <b>and</b> coffee.</span>
+            <label><input type="radio" name="g7" value="c"> Conjunction</label> | <label><input type="radio" name="g7" value="w"> Pronoun</label>
+
+            <span class="question">8. <b>Wow!</b> That is amazing.</span>
+            <label><input type="radio" name="g8" value="w"> Verb</label> | <label><input type="radio" name="g8" value="c"> Interjection</label>
+
+            <button class="btn" onclick="checkQuiz('quiz-grammar')">Check Answers</button>
+            <div class="result" id="res-quiz-grammar"></div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>4. Phonetic Transcription (30 Essential Words)</h2>
+        <table>
+            <thead><tr><th>#</th><th>Word</th><th>IPA</th><th>Tip</th></tr></thead>
+            <tbody id="phonetic-body"></tbody>
+        </table>
+    </section>
+</div>
+
+<script src="./js/script-tuesday-2026-03-24.js"></script>
+
+</body>
+</html>
