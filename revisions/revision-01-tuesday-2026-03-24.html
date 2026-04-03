@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Revision Session 1: PQ4R & Phonetics</title>
+    <link rel="stylesheet" href="../style-session.css">
+    <style>
+        :root { --success-bg: #dcfce7; --error-bg: #fee2e2; --indigo-dark: #1e293b; --accent-blue: #2563eb; }
+        .question-card { background: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; border: 1px solid #e2e8f0; transition: 0.3s; }
+        .explanation { display: none; margin-top: 15px; padding: 12px; border-radius: 8px; font-size: 0.95rem; background: #f8fafc; border-left: 4px solid var(--accent-blue); color: #475569; }
+        .correct-ans { border: 2px solid #22c55e; background-color: var(--success-bg); }
+        .incorrect-ans { border: 2px solid #ef4444; background-color: var(--error-bg); }
+        .option-label { display: block; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: 0.2s; }
+        .option-label:hover { background-color: #f1f5f9; }
+        input[type="radio"] { margin-right: 10px; }
+        .summary-box { border-radius: 12px; padding: 30px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <nav><a href="../index.html">← Back to Hub</a></nav>
+    <div class="container">
+        <h1>Phonetics & Learning Strategy</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/FRfVzF8Tk0c?si=EJuy1hQLAuOCYDC7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="summary-box">
+            <h2>I. The PQ4R Method (Mental Workflow)</h2>
+            <p>Order is logic. Mathias must master these 6 steps to optimize his "Workload":</p>
+            <ol>
+                <li><b>Preview:</b> Skim the text for headers/diagrams.</li>
+                <li><b>Question:</b> Turn headers into questions.</li>
+                <li><b>Read:</b> Search for answers to your questions.</li>
+                <li><b>Reflect:</b> Think of examples and mental "Anchors".</li>
+                <li><b>Recite:</b> State the answers out loud (Sound is key).</li>
+                <li><b>Review:</b> Summarize the main points.</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>II. The 30 Phonetic Traps</h2>
+            <p>Every word here has a logical "trap" (Silent letters or unexpected sounds).</p>
+            <table style="width:100%; border-collapse: collapse;">
+                <tr style="background:#eee"><th>Word</th><th>IPA</th><th>The "Trap"</th></tr>
+                <tr>
+                    <td><a href="https://www.wordreference.com/enfr/although" target="_blank" rel="noopener noreferrer">Although</a></td>
+                    <td><a href="https://youglish.com/pronounce/although/english" target="_blank" rel="noopener noreferrer">/ɔːlˈðəʊ/</a></td>
+                    <td>Silent 'gh'</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordreference.com/enfr/architecture" target="_blank" rel="noopener noreferrer">Architecture</a></td>
+                    <td><a href="https://youglish.com/pronounce/architecture/english" target="_blank" rel="noopener noreferrer">/ˈɑːkɪtektʃə/</a></td>
+                    <td>CH = K</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordreference.com/enfr/debt" target="_blank" rel="noopener noreferrer">Debt</a></td>
+                    <td><a href="https://youglish.com/pronounce/debt/english" target="_blank" rel="noopener noreferrer">/det/</a></td>
+                    <td>Silent 'b'</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordreference.com/enfr/knowledge" target="_blank" rel="noopener noreferrer">Knowledge</a></td>
+                    <td><a href="https://youglish.com/pronounce/knowledge/english" target="_blank" rel="noopener noreferrer">/ˈnɒlɪdʒ/</a></td>
+                    <td>Silent 'k'</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordreference.com/enfr/muscle" target="_blank" rel="noopener noreferrer">Muscle</a></td>
+                    <td><a href="https://youglish.com/pronounce/muscle/english" target="_blank" rel="noopener noreferrer">/ˈmʌsl/</a></td>
+                    <td>Silent 'c'</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordreference.com/enfr/receipt" target="_blank" rel="noopener noreferrer">Receipt</a></td>
+                    <td><a href="https://youglish.com/pronounce/receipt/english" target="_blank" rel="noopener noreferrer">/rɪˈsiːt/</a></td>
+                    <td>Silent 'p'</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordreference.com/enfr/schedule" target="_blank" rel="noopener noreferrer">Schedule</a></td>
+                    <td><a href="https://youglish.com/pronounce/schedule/english" target="_blank" rel="noopener noreferrer">/ˈʃedjuːl/</a></td>
+                    <td>SH in UK</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordreference.com/enfr/Wednesday" target="_blank" rel="noopener noreferrer">Wednesday</a></td>
+                    <td><a href="https://youglish.com/pronounce/wednesday/english" target="_blank" rel="noopener noreferrer">/ˈwenzdeɪ/</a></td>
+                    <td>Silent 'd'</td>
+                </tr>
+                </table>
+        </div>
+
+        <div class="quiz-section">
+            <h2>III. Grammar & Logic Quiz</h2>
+            <form id="masteryQuiz">
+                <div id="quizContainer"></div>
+
+                <div style="text-align: center; padding: 30px 0;">
+                    <button type="button" onclick="validateQuiz()" id="submitBtn" class="option-btn" style="background: var(--accent-blue); color: white; font-weight: bold; padding: 15px 40px; border: none; cursor: pointer;">
+                        Submit My Answers
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div id="finalResult" class="summary-box" style="text-align: center; display:none; background: white; border: 2px solid var(--accent-blue);">
+            <h2 id="scoreTitle" style="font-size: 2rem; color: var(--accent-blue);">Score: 0 / 10</h2>
+            <p id="scoreMessage" style="font-style: italic; margin-top: 10px;"></p>
+        </div>
+    </div>
+    <script>
+        const quizData = [
+            {
+                q: "In the PQ4R method, what does the 'Reflect' step involve?",
+                options: ["Reading the text as fast as possible", "Finding personal examples and creating mental anchors", "Reciting answers out loud", "Counting how many pages are left"],
+                correct: 1,
+                exp: "Reflection involves linking new information to what you already know to facilitate long-term memory storage."
+            },
+            {
+                q: "Which letter is silent in the word 'Receipt'?",
+                options: ["The 'r'", "The 'e'", "The 'p'", "The 't'"],
+                correct: 2,
+                exp: "The 'p' is completely silent in 'Receipt'. It is pronounced /rɪˈsiːt/."
+            },
+            {
+                q: "How is the 'ch' pronounced in 'Architecture'?",
+                options: ["Like 'ch' in 'Cheese'", "Like a 'k'", "Like an 's'", "It is not pronounced"],
+                correct: 1,
+                exp: "In words of Greek origin like 'architecture' or 'chaos', the 'ch' is pronounced as /k/."
+            },
+            {
+                q: "What is the function of 'Competent' in: 'He is a competent engineer'?",
+                options: ["Adverb", "Verb", "Noun", "Adjective"],
+                correct: 3,
+                exp: "It describes the noun 'engineer', therefore it is an adjective."
+            },
+            {
+                q: "What does it mean to 'Skim' a text?",
+                options: ["To read every word carefully", "To browse quickly to grasp the general idea", "To translate the text word for word", "To memorize the text by heart"],
+                correct: 1,
+                exp: "Skimming is a fast reading technique used to identify headers, diagrams, and the global core of the text."
+            },
+            {
+                q: "In the word 'Knowledge', which letters are silent?",
+                options: ["Only the 'k'", "The 'k' and the 'w'", "The 'd' and the 'g'", "The 'n' and the 'l'"],
+                correct: 1,
+                exp: "The initial 'k' before 'n' is silent, and the 'w' in the '-edge' ending is not heard."
+            },
+            {
+                q: "What is the goal of the 'Question' step in PQ4R?",
+                options: ["To ask the teacher a question", "To turn headers into questions to guide your reading", "To answer a multiple-choice quiz", "To doubt the validity of the text"],
+                correct: 1,
+                exp: "Turning a header into a question activates the brain and gives a specific purpose to the reading that follows."
+            },
+            {
+                q: "The word 'Debt' is pronounced as:",
+                options: ["/debt/", "/de-be-te/", "/det/", "/de-te/"],
+                correct: 2,
+                exp: "The 'b' is silent. It is pronounced /det/, rhyming with 'bet'."
+            },
+            {
+                q: "In 'She speaks fast', the word 'fast' is:",
+                options: ["An adjective", "An adverb", "A preposition", "A pronoun"],
+                correct: 1,
+                exp: "Here, 'fast' modifies the verb 'speaks' (explaining how she speaks), so it is an adverb."
+            },
+            {
+                q: "Which PQ4R step specifically uses auditory memory?",
+                options: ["Preview", "Read", "Recite", "Reflect"],
+                correct: 2,
+                exp: "The 'Recite' step involves stating answers out loud to anchor information through the auditory channel."
+            }
+        ];
+
+        function initQuiz() {
+            const container = document.getElementById('quizContainer');
+            quizData.forEach((data, index) => {
+                let optionsHtml = data.options.map((opt, i) => `
+                    <label class="option-label">
+                        <input type="radio" name="q${index}" value="${i}"> ${opt}
+                    </label>
+                `).join('');
+
+                container.innerHTML += `
+                    <div class="question-card" id="card-${index}">
+                        <p style="font-weight:bold; margin-bottom:15px;">${index + 1}. ${data.q}</p>
+                        ${optionsHtml}
+                        <div class="explanation" id="exp-${index}"><b>Logic:</b> ${data.exp}</div>
+                    </div>
+                `;
+            });
+        }
+
+        function validateQuiz() {
+            let score = 0;
+            quizData.forEach((data, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                const card = document.getElementById(`card-${index}`);
+                const exp = document.getElementById(`exp-${index}`);
+                
+                exp.style.display = 'block';
+                
+                if (selected && parseInt(selected.value) === data.correct) {
+                    score++;
+                    card.classList.add('correct-ans');
+                    card.classList.remove('incorrect-ans');
+                } else {
+                    card.classList.add('incorrect-ans');
+                    card.classList.remove('correct-ans');
+                }
+            });
+
+            const final = document.getElementById('finalResult');
+            const scoreTitle = document.getElementById('scoreTitle');
+            const scoreMessage = document.getElementById('scoreMessage');
+            final.style.display = 'block';
+            scoreTitle.innerText = `Final Score: ${score} / ${quizData.length}`;
+            
+            scoreMessage.innerText = score >= 8 ? "Excellent! You are mastering the logic." : "Keep practicing. Consistency is key.";
+            
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        window.onload = initQuiz;
+    </script>
+</body>
+</html>
